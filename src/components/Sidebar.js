@@ -1,5 +1,12 @@
 import React from "react";
-import { FaCompass, FaExclamationCircle, FaHeart, FaSun } from "react-icons/fa";
+import {
+  FaCompass,
+  FaExclamationCircle,
+  FaHeart,
+  FaPhoneAlt,
+  FaSun,
+  FaTruckMoving,
+} from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { FaBoxes } from "react-icons/fa";
 
@@ -12,36 +19,68 @@ const Sidebar = () => {
     <div className="Sidebar d-flex flex-column d-flex flex-column justify-content-between left-0 position-absolute">
       <div className="sidebarNavIconsList d-flex flex-column justify-content-evenly align-items-center">
         {/*  Home  */}
-        <li className="sidebarNavIconsListElem">
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="Home"
+        >
           <FaHome />
         </li>
         {/* <FaCompass /> */}
-        <li className="sidebarNavIconsListElem">
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="Explore"
+        >
           <FaCompass />
         </li>
         {/*  products */}
-        <li className="sidebarNavIconsListElem">
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="Products"
+        >
           <FaBoxes />
         </li>
         {/*  Saved */}
-        <li className="sidebarNavIconsListElem">
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="Saved"
+        >
           <FaHeart />
         </li>
         {/*  */}
-        <li className="sidebarNavIconsListElem">
-          <FaBoxes />
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="OrdersNDelivery"
+        >
+          <FaTruckMoving />
         </li>
         {/*  Saved */}
-        <li className="sidebarNavIconsListElem">
-          <FaHeart />
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="After Sales"
+        >
+          <FaPhoneAlt />
         </li>
       </div>
       <div className="sidebarNavIconList2 d-flex flex-column justify-content-evenly align-items-center">
-        <li className="sidebarNavIconsListElem">
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="Feedback"
+        >
           <FaExclamationCircle />
         </li>
         {/*  settings */}
-        <li className="sidebarNavIconsListElem">
+        <li
+          className="sidebarNavIconsListElem"
+          data-bs-toggle="tooltip"
+          title="Settings"
+        >
           <FaSun />
         </li>
       </div>
