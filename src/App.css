@@ -50,7 +50,6 @@ body::-webkit-scrollbar{
 .sidebarNavIconsListElem{
     list-style-type: none;
     border: 1px solid rgb(168, 255, 252);
-    padding: 0.5rem 0.8rem;
     border-radius: 9px ;
     display: flex;
     justify-content: center;
@@ -116,8 +115,11 @@ body::-webkit-scrollbar{
 
 
 /* compContainer */
-
 .CompContainer{
-   width: 96vw;
-   background-color: aqua;  
+   width: 100vw;
+   height: 96vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(169, 240, 216);  
 }

@@ -20,7 +20,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Home"
         >
-          <Link to="/">
+          <Link to="/" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaHome className="text-dark" />
           </Link>
         </li>
@@ -30,7 +30,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Explore"
         >
-          <Link to="/explore">
+          <Link to="/explore" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaCompass className="text-dark" />
           </Link>
         </li>
@@ -40,7 +40,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Products"
         >
-          <Link to="/products">
+          <Link to="/products" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaBoxes className="text-dark" />
           </Link>
         </li>
@@ -50,7 +50,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Saved"
         >
-          <Link to="/saved">
+          <Link to="/saved" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaHeart className="text-dark" />
           </Link>
         </li>
@@ -60,7 +60,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="OrdersNDelivery"
         >
-          <Link to="/orderNdelivery">
+          <Link to="/orderNdelivery" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaTruckMoving className="text-dark" />
           </Link>
         </li>
@@ -70,7 +70,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="After Sales"
         >
-          <Link to="/afterSales">
+          <Link to="/afterSales" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaPhoneAlt className="text-dark" />
           </Link>
         </li>
@@ -81,7 +81,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Feedback"
         >
-          <Link to="/feedback">
+          <Link to="/feedback" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaExclamationCircle className="text-dark" />
           </Link>
         </li>
@@ -91,7 +91,7 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Settings"
         >
-          <Link to="/Settings">
+          <Link to="/Settings" className="d-flex justify-content-center align-items-center py-3 px-3">
             <FaSun className="text-dark" />
           </Link>
         </li>
