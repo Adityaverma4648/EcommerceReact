@@ -6,14 +6,10 @@ import {
   FaPhoneAlt,
   FaSun,
   FaTruckMoving,
+  FaHome,
+  FaBoxes,
 } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
-import { FaBoxes } from "react-icons/fa";
-
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
+import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="Sidebar d-flex flex-column d-flex flex-column justify-content-between left-0 position-absolute">
@@ -24,7 +20,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Home"
         >
-          <FaHome />
+          <Link to="/">
+            <FaHome className="text-dark" />
+          </Link>
         </li>
         {/* <FaCompass /> */}
         <li
@@ -32,7 +30,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Explore"
         >
-          <FaCompass />
+          <Link to="/explore">
+            <FaCompass className="text-dark" />
+          </Link>
         </li>
         {/*  products */}
         <li
@@ -40,7 +40,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Products"
         >
-          <FaBoxes />
+          <Link to="/products">
+            <FaBoxes className="text-dark" />
+          </Link>
         </li>
         {/*  Saved */}
         <li
@@ -48,7 +50,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Saved"
         >
-          <FaHeart />
+          <Link to="/saved">
+            <FaHeart className="text-dark" />
+          </Link>
         </li>
         {/*  */}
         <li
@@ -56,7 +60,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="OrdersNDelivery"
         >
-          <FaTruckMoving />
+          <Link to="/orderNdelivery">
+            <FaTruckMoving className="text-dark" />
+          </Link>
         </li>
         {/*  Saved */}
         <li
@@ -64,7 +70,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="After Sales"
         >
-          <FaPhoneAlt />
+          <Link to="/afterSales">
+            <FaPhoneAlt className="text-dark" />
+          </Link>
         </li>
       </div>
       <div className="sidebarNavIconList2 d-flex flex-column justify-content-evenly align-items-center">
@@ -73,7 +81,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Feedback"
         >
-          <FaExclamationCircle />
+          <Link to="/feedback">
+            <FaExclamationCircle className="text-dark" />
+          </Link>
         </li>
         {/*  settings */}
         <li
@@ -81,7 +91,9 @@ const Sidebar = () => {
           data-bs-toggle="tooltip"
           title="Settings"
         >
-          <FaSun />
+          <Link to="/Settings">
+            <FaSun className="text-dark" />
+          </Link>
         </li>
       </div>
     </div>

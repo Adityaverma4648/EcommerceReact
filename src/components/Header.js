@@ -8,11 +8,10 @@ const Header = ({ search }) => {
     console.log(search);
   };
   return (
-    <Container fluid className="bg-success py-2">
-      <Row>
-        <Col>my One</Col>
-      </Row>
-    </Container>
+    <div className="Header">
+      <div className="logoCont">LOGO</div>
+      Hello from header
+    </div>
   );
 };
 

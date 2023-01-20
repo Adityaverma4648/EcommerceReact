@@ -12,27 +12,45 @@ body{
 body::-webkit-scrollbar{
     display: none;
 }
+/* Header */
+.Header{
+    height: 60px;
+    display: flex;
+    background-color: rgb(190, 248, 229);
+    border-bottom: 1px solid rgb(31, 191, 132);
+}
+.logoCont{
+    height: 100%;
+    width: 75px;
+    border-right: 1px solid rgb(31, 191, 132);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
 
 /*  sidebar Styles */
 .Sidebar{
-    background-color: aquamarine;
-    height: 98vh;
+    background-color: rgb(190, 248, 229);
+    height: 94vh;
     width: 75px;
-    font-size: 16px ;
+    font-size: 20px ;
+    border-right: 1px solid rgb(31, 191, 132);
 }
 .sidebarNavIconsList{
     width: 100%;
-    height: 60vh;
+    height: 55vh;
 }
 .sidebarNavIconList2{
     width: 100%;
-    height: 25vh;
+    height: 20vh;
+    margin-bottom: 4rem;
 }
 .sidebarNavIconsListElem{
     list-style-type: none;
-    background-color: rgb(116, 230, 192);
     border: 1px solid rgb(168, 255, 252);
-    padding: 0.8rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 9px ;
     display: flex;
     justify-content: center;
@@ -95,3 +113,11 @@ body::-webkit-scrollbar{
 }
 
 /*  sidebar Ends */
+
+
+/* compContainer */
+
+.CompContainer{
+   width: 96vw;
+   background-color: aqua;  
+}
