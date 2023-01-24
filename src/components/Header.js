@@ -21,9 +21,9 @@ const Header = ({ search }) => {
       <div className="navbarCont">
         {/* search form */}
         <div className="searchForm d-flex justify-content-center align-items-center">
-          <FaSearch />
+          <FaSearch className="mx-1" style={{fontSize:"19px"}} />
           <input type="text" name="searchInp" id="searchInp" className="bg-transparent p-2 rounded-5" placeholder="Search" />
-
+            
         </div>
 
         {/* Search Icons  */}

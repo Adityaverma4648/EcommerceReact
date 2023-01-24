@@ -14,6 +14,7 @@ body::-webkit-scrollbar{
 }
 /* Header */
 .Header{
+    z-index: 9999999;
     height: 60px;
     display: flex;
     background-color: rgb(223, 223, 223);
@@ -32,6 +33,7 @@ body::-webkit-scrollbar{
 
 /*  sidebar Styles */
 .Sidebar{
+    z-index: 9999999;
         background-color: rgb(223, 223, 223);
     height: 94vh;
     width: 75px;
@@ -60,7 +62,7 @@ body::-webkit-scrollbar{
 /*  hover */
 .sidebarNavIconsListElem:hover{
     transition: all 0.3s ease-in-out;
-    background-color: rgb(28, 123, 91);
+    background-color: rgb(60, 0, 255);
     color: #fff;
     animation: shake 1s infinite ease-in-out;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
@@ -112,60 +114,140 @@ body::-webkit-scrollbar{
 }
 
 /*  sidebar Ends */
+/*  header */
+.navbarCont {
+    /* background-color: red; */
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
+.searchForm {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchForm input {
+    width: 60%;
+
+}
+
+.userOrientedIconOptions {
+    width: 20%;
+    padding: 0.5rem 0px;
+}
+
+.userOrientedIconOptions button {
+    padding: 0px 1rem;
+    font-size: 19px;
+}
+
+.searchOptions {
+    width: 20%;
+    font-size: 19px;
+    display: flex;
+    padding: 0.55rem 0px;
+}
+
+.searchOptions button {
+    padding: 0px 1.25rem;
+}
+
+.cartContIcon {
+    width: 23%;
+}
+
+/*  header ends--------------- */
 
 /* compContainer */
 .CompContainer{
    width: 100vw;
    height: 96vh;
    display: flex;
-   justify-content: center;
-   background-color: rgb(169, 240, 216);  
+   flex-direction: column;
+   align-items: center;
+   /* justify-content: center; */
+   background-color: rgb(46, 0, 86);  
 }
 
-.navbarCont{
-    /* background-color: red; */
-    width: 95vw;
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
-}
-.searchForm{
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.searchForm input{
-    width: 60%;
 
-}
-.userOrientedIconOptions{
-    width: 20%;
-    padding: 0.5rem 0px;
-}
-.userOrientedIconOptions button{
-    padding: 0px 1rem;
-    font-size: 19px;
-}
-.searchOptions{
-    width: 20%;
-    font-size: 19px;
-    display: flex;
-    padding: 0.55rem 0px;
-}
-.searchOptions button{
-    padding: 0px 1.25rem;
-}
-.cartContIcon{
-    width: 23%;
-}
 
 
 /* Home */
 .welcomeHomeCont{
-    height: 25vh;
+    height: 35vh;
+    color: #fff;
+    background: linear-gradient(45deg, rgb(177, 177, 177),rgb(30, 0, 255));
 }
 .welcomeHomeButtonCont{
-    width: 20%;
+    width: 250px;
+    z-index: 99;
+}
+.welcomeHomeCont h4,span{
+    z-index: 99;
+}
+.welcomeHomeButtonCont button{
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+.welcomeHomeButtonCont button:hover{
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.799);
+}
+.illustrationCont{
+    user-select: none;
+}
+/*  slider */
+.arrowIcons{
+    background: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)),url("https: //png.pngtree.com/png-clipart/20211202/ourmid/pngtree-christmas-snow-festival-celebration-png-image_4048352.png");
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(0.1rem);
+    color: #fff;
+}
+.img-container-child img{
+    user-select: none;
+}
+.img-container{
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(0.5rem);
+    padding: 0px 1rem ;
+}
+
+
+@media only screen and (max-width : 1100px ){
+       .illustrationCont img{
+           display: none;
+       }
+       .arrowIcons{
+            max-height: 25vh;
+        }
+        .img-container{
+            max-height: 25vh;
+        }
+        .welcomeHomeContSlider{
+            max-height: 28vh;
+        }
+
+}
+
+@media only screen and (max-width:750px){
+        .arrowIcons {
+                max-height: 18vh;
+                width: 1rem;
+                text-align: center;
+                padding: 0px;
+                font-size: 16px;
+            }
+        
+            .img-container {
+                max-height: 18vh;
+            }
+        
+            .welcomeHomeContSlider {
+                max-height: 28vh;
+            }
 }
