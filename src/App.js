@@ -11,7 +11,7 @@ import OrderNdelivery from "./components/OrderNdelivery";
 import AfterSales from "./components/AfterSales";
 import Feedback from "./components/Feedback";
 import Settings from "./components/Settings";
-
+import Cart from "./components/Cart";
 
 const App = () => {
   const handleSearch = () => {};
@@ -30,6 +30,7 @@ const App = () => {
             <Route path="/afterSales" element={<AfterSales />}></Route>
             <Route path="/feedback" element={<Feedback />}></Route>
             <Route path="/settings" element={<Settings />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
             
           </Routes>
 

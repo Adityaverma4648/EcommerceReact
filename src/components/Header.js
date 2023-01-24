@@ -8,6 +8,7 @@ import {
   FaSun,
   FaShoppingCart,
 } from "react-icons/fa";
+import {Link} from "react-router-dom"
 
 const Header = ({ search }) => {
   // const [search,setSearch] = useState("");
@@ -21,8 +22,8 @@ const Header = ({ search }) => {
         {/* search form */}
         <div className="searchForm d-flex justify-content-center align-items-center">
           <FaSearch />
-          <input type="text" name="searchInp" id="searchInp" className="bg-transparent border-0 p-2 rounded-5" placeholder="Search" />
-          <input type="submit" name="searchBtn" id="searchBtn" />
+          <input type="text" name="searchInp" id="searchInp" className="bg-transparent p-2 rounded-5" placeholder="Search" />
+
         </div>
 
         {/* Search Icons  */}
@@ -56,6 +57,7 @@ const Header = ({ search }) => {
           >
             0
           </span>
+          <Link to="/cart">
           <button
             type="button"
             className="btn border-0 "
@@ -63,6 +65,7 @@ const Header = ({ search }) => {
           >
             <FaShoppingCart />
           </button>
+          </Link>
         </div>
       </div>
     </div>
