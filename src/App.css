@@ -62,7 +62,7 @@ body::-webkit-scrollbar{
 /*  hover */
 .sidebarNavIconsListElem:hover{
     transition: all 0.3s ease-in-out;
-    background-color: rgb(60, 0, 255);
+    background-color: rgb(171, 146, 255);
     color: #fff;
     animation: shake 1s infinite ease-in-out;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
@@ -169,14 +169,25 @@ body::-webkit-scrollbar{
    display: flex;
    flex-direction: column;
    align-items: center;
-   /* justify-content: center; */
-   background-color: rgb(46, 0, 86);  
+   overflow-y: scroll;
+   background-color: rgb(139, 139, 139);  
+}
+
+.CompContainer::-webkit-scrollbar{
+    display: none;
 }
 
 
 
 
 /* Home */
+.welcomeHomeContSliderCont{
+    z-index: 999;
+    background-image: url("https://images.unsplash.com/photo-1674020332280-579b95f2b267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 .welcomeHomeCont{
     height: 35vh;
     color: #fff;
@@ -202,19 +213,40 @@ body::-webkit-scrollbar{
 }
 /*  slider */
 .arrowIcons{
-    background: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)),url("https: //png.pngtree.com/png-clipart/20211202/ourmid/pngtree-christmas-snow-festival-celebration-png-image_4048352.png");
+    background: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5));
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(0.1rem);
     color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+.arrowIcons:hover{
+    transition: all 0.2s ease-in-out;
+    color: rgb(171, 146, 255);
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
 }
 .img-container-child img{
     user-select: none;
+    animation: shake 0.2s ease-in-out;
+}
+.img-container-child{
+    animation: fade 0.8s ease-in-out;
 }
 .img-container{
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(0.5rem);
-    padding: 0px 1rem ;
+    padding: 0px 0.5rem ;
+}
+@keyframes fade{
+    0%{
+        opacity : 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 

@@ -2,7 +2,13 @@ import React from "react";
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
-import Tour from "../svg/Tour.svg";
+// import Tour from "../svg/Tour.svg";
+import clothing from "../svg/clothing.svg";
+import desktop from "../svg/desktop.svg";
+import sport from "../svg/sport.svg";
+import sneaker from "../svg/sneaker.svg";
+import watch from "../svg/watch.svg";
+
 import {
   FaExternalLinkAlt,
   FaCompass,
@@ -12,6 +18,7 @@ import {
 } from "react-icons/fa";
 
 const Home = () => {
+  // sliderData
   const SliderImages = [
     {
       id: 1,
@@ -29,7 +36,37 @@ const Home = () => {
       alt: "003",
     },
   ];
+  // CategoryData
+  const Categories = [
+    {
+      id: 1,
+      heading: "Clothes",
+      src: clothing,
+    },
+    {
+      id: 2,
+      heading: "Electronics",
+      src: desktop,
+    },
+    {
+      id: 3,
+      heading: "Sport Accessories",
+      src: sport,
+    },
+    {
+      id: 4,
+      heading: "Shoes & socks",
+      src: sneaker,
+    },
+    {
+      id: 5,
+      heading: "Watches",
+      src: watch,
+    },
+  ];
+
   const [sliderIndex, setSliderindex] = useState(1);
+  // sliderIncrement fun
   const SliderIncrementor = () => {
     var prevIndex = sliderIndex;
     if (prevIndex > 2) {
@@ -43,10 +80,9 @@ const Home = () => {
       setSliderindex(prevIndex);
     }
   };
-
-
-  const SliderDecrementor = ()=>{
-          var prevIndex = sliderIndex;
+  // SliderDecrement fun
+  const SliderDecrementor = () => {
+    var prevIndex = sliderIndex;
     if (prevIndex <= 1) {
       prevIndex = 3;
       setSliderindex(prevIndex);
@@ -54,14 +90,17 @@ const Home = () => {
       prevIndex -= 1;
       setSliderindex(prevIndex);
     }
-  }
+  };
   return (
     <div className="CompContainer">
-      <div className="container-fluid d-flex justify-content-center align-items-center" style={{minWidth:"100vw"}}>
+      <div
+        className="container-fluid d-flex justify-content-center align-items-center"
+        style={{ minWidth: "100vw" }}
+      >
         {/* header illustrations */}
         <div
           className="illustrationCont container position-absolute right-0 d-flex justify-content-end"
-          style={{height: "35vh" }}
+          style={{ height: "35vh" }}
         >
           <img
             src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-banner-decoration-3688632-3231445.png"
@@ -70,7 +109,10 @@ const Home = () => {
           />
         </div>
         {/* illustrationCont ends here */}
-        <div className="welcomeHomeCont container-fluid my-1 d-flex flex-column align-items-center justify-content-center pt-4" style={{minWidth :"100vw"}}>
+        <div
+          className="welcomeHomeCont container-fluid mt-1 d-flex flex-column align-items-center justify-content-center pt-4"
+          style={{ minWidth: "100vw" }}
+        >
           <h4>Welcome to ShopCart</h4>
           <span>
             The 2023 Best Online Retail Store with over 2B users in the world.
@@ -98,50 +140,71 @@ const Home = () => {
       </div>
 
       {/*  sliderCont */}
-      <div
-        className="welcomeHomeContSlider px-1 container position-relative d-flex justify-content-between align-items-center"
-        style={{ height: "50vh" }}
-      >
+      <div className="welcomeHomeContSliderCont container-fluid">
         <div
-          className="arrowIcons rounded-1 p-3 d-flex justify-content-center align-items-center me-1"
-          onClick={SliderDecrementor}
-          
-          style={{
-                  height: "48vh",
-             zIndex: "9",
-             cursor: "pointer",
-             fontSize: "21px",
-          }}
+          className="welcomeHomeContSlider px-1 container position-relative d-flex justify-content-between align-items-center"
+          style={{ height: "50vh" }}
         >
-          <FaCaretLeft />
+          <div
+            className="arrowIcons rounded-1 p-3 d-flex justify-content-center align-items-center me-1"
+            onClick={SliderDecrementor}
+            style={{
+              height: "48vh",
+              zIndex: "9",
+              cursor: "pointer",
+              fontSize: "21px",
+            }}
+          >
+            <FaCaretLeft />
+          </div>
+          <div
+            className="img-container d-flex justify-content-center align-items-center"
+            style={{ width: "100%", height: "48vh" }}
+          >
+            {SliderImages?.slice(sliderIndex - 1, sliderIndex).map((ar) => {
+              return (
+                <div
+                  className="img-container-child"
+                  key={ar.id}
+                  sytle={{ height: "100%", width: "100%" }}
+                >
+                  <img src={ar.src} alt={ar.alt} style={{ width: "100%" }} />
+                </div>
+              );
+            })}
+          </div>
+          <div
+            className="arrowIcons rounded-1 p-3 d-flex justify-content-center align-items-center ms-1"
+            onClick={SliderIncrementor}
+            style={{
+              height: "48vh",
+              zIndex: "9",
+              cursor: "pointer",
+              fontSize: "21px",
+            }}
+          >
+            <FaCaretRight />
+          </div>
         </div>
+      </div>
+
+      <div className="allCategoriesCont container-fluid d-flex flex-column justify-content-center align-items-center bg-light">
+        <div className="container py-2 h3 bg-light">Categories</div>
         <div
-          className="img-container d-flex justify-content-center align-items-center"
-          style={{ width: "100%", height: "48vh" }}
+          className="container d-flex flex-wrap justify-content-center align-items-center"
+          style={{ height: "30vh" }}
         >
-          {SliderImages?.slice(sliderIndex-1, sliderIndex).map((ar) => {
+          {Categories.map((ar) => {
             return (
-              <div
-                className="img-container-child"
-                key={ar.id}
-                sytle={{ height: "100%", width: "100%" }}
+              <a
+                href="https://localhost:3000/category?id"
+                className="border border-1 border-dark text-decoration-none text-dark col-sm-2 m-1 d-flex flex-column justify-content-center align-items-center"
               >
-                <img src={ar.src} alt={ar.alt} style={{ width: "100%" }} />
-              </div>
+                <img src={ar.src} alt={ar.heading} className="p-2" style={{ width: "85%" }} />
+                <h5 className="text-center">{ar.heading}</h5>
+              </a>
             );
           })}
-        </div>
-        <div
-          className="arrowIcons rounded-1 p-3 d-flex justify-content-center align-items-center ms-1"
-          onClick={SliderIncrementor}
-          style={{
-             height: "48vh",
-             zIndex: "9",
-             cursor: "pointer",
-             fontSize: "21px",
-          }}
-        >
-          <FaCaretRight />
         </div>
       </div>
     </div>
