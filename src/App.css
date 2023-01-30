@@ -237,6 +237,18 @@ body::-webkit-scrollbar{
     backdrop-filter: blur(0.5rem);
     padding: 0px 0.5rem ;
 }
+.onScrollAnimation{
+    animation: fade 0.3s ease-in-out reverse;
+}
+/*  categories */
+.shakeIcons{
+    animation: shake 2s infinite ease-in-out;
+}
+.catHeading{
+    color: #fff;
+    min-width: 100vw;
+    background: linear-gradient(45deg, rgba(177, 177, 177,0.8), rgb(30, 0, 255));
+}
 @keyframes fade{
     0%{
         opacity : 0;

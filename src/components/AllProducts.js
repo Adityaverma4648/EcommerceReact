@@ -1,12 +1,38 @@
-import React,{useState,useEffect} from 'react';
-// import 
+import React, { useState, useEffect } from "react";
+import all from "../data/all.js";
+import ProductCard from "./ProductCard.js";
 
 const AllProducts = () => {
-  return (
-    <div className='CompContainer'>
-          
-    </div>
-  )
-}
+  const [products, setProducts] = useState([]);
+  const productFetcher = () => {
+    setProducts(all);
+    console.log(products);
+  };
 
-export default AllProducts
+  useEffect(() => {
+    productFetcher();
+  });
+
+  return (
+    <div className="CompContainer">
+      <div className="ProductContainer">
+        {products.map((ar) => {
+          return (
+            <ProductCard
+              key={ar.key}
+              id={ar.id}
+              fullName={ar.fullName}
+              url={ar.url}
+              brand={ar.brand}
+              year={ar.year}
+              price={ar.price}
+              rating={ar.rating}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default AllProducts;

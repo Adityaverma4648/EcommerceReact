@@ -15,6 +15,7 @@ import {
   FaFingerprint,
   FaCaretLeft,
   FaCaretRight,
+  FaShoppingBag,
 } from "react-icons/fa";
 
 const Home = () => {
@@ -91,6 +92,11 @@ const Home = () => {
       setSliderindex(prevIndex);
     }
   };
+
+  const onScrollAnimation = () => {
+    const illustrationCont = document.getElementById("illustrationCont");
+    illustrationCont.classList.add("onScrollAnimation");
+  };
   return (
     <div className="CompContainer">
       <div
@@ -101,6 +107,8 @@ const Home = () => {
         <div
           className="illustrationCont container position-absolute right-0 d-flex justify-content-end"
           style={{ height: "35vh" }}
+          onScroll={onScrollAnimation}
+          id="illustrationCont"
         >
           <img
             src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-banner-decoration-3688632-3231445.png"
@@ -189,7 +197,12 @@ const Home = () => {
       </div>
 
       <div className="allCategoriesCont container-fluid d-flex flex-column justify-content-center align-items-center bg-light">
-        <div className="container py-2 h3 bg-light">Categories</div>
+        <div className="container-fluid d-flex justify-content-center align-items-center py-4 h3 catHeading">
+          <span className="container bg-transparent">
+            <FaShoppingBag className="me-2 shakeIcons" />
+            Categories
+          </span>
+        </div>
         <div
           className="container d-flex flex-wrap justify-content-center align-items-center"
           style={{ height: "30vh" }}
@@ -200,7 +213,12 @@ const Home = () => {
                 href="https://localhost:3000/category?id"
                 className="border border-1 border-dark text-decoration-none text-dark col-sm-2 m-1 d-flex flex-column justify-content-center align-items-center"
               >
-                <img src={ar.src} alt={ar.heading} className="p-2" style={{ width: "85%" }} />
+                <img
+                  src={ar.src}
+                  alt={ar.heading}
+                  className="p-2"
+                  style={{ width: "85%" }}
+                />
                 <h5 className="text-center">{ar.heading}</h5>
               </a>
             );
