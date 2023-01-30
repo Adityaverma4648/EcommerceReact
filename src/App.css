@@ -254,15 +254,20 @@ body::-webkit-scrollbar{
 
 /*  productContainer  */
 .productContainerCont{
-    background-color: #fff;
+    background-color: rgb(245, 245, 245);
 }
 .ProductCard{
     width: 20vw;
-    height: 45vh;
+    height: 48vh;
     padding: 5px 0px;
     border-radius: 10px;
     background-color: rgb(174, 113, 232);
     box-shadow: 5px 5px 10px  rgba(0, 0, 0,0.4) ;
+}
+.bodyHeading{
+    max-height: 3vh;
+    overflow: hidden;
+    /* background-color: aqua; */
 }
 .productImgContainer{
     width: 20vw;
@@ -310,6 +315,14 @@ body::-webkit-scrollbar{
         }
         .welcomeHomeContSlider{
             max-height: 28vh;
+        }
+        .ProductCard {
+            width: 30vw;
+            height: 43vh;
+            padding: 5px 0px;
+            border-radius: 10px;
+            background-color: rgb(174, 113, 232);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
         }
 
 }

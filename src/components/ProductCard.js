@@ -3,12 +3,12 @@ import { FaShoppingBasket, FaHeart } from "react-icons/fa";
 
 const ProductCard = (props) => {
   return (
-    <div className="ProductCard text-center m-1 my-4 " key={props.key}>
+    <div className="ProductCard text-center m-1 my-4">
       <div className="container productImgContainer">
         <img src={props.url} alt={props.fullName} />
       </div>
       <div className="body d-flex flex-column text-center">
-        <strong className="text-white">{props.fullName}</strong>
+        <strong className="text-white bodyHeading">{props.fullName}</strong>
         <div className="d-flex justify-content-center align-items-center text-center">
           <span className="text-light">{props.brand}</span>
           <span className="text-light">{props.rating}</span>
@@ -20,11 +20,11 @@ const ProductCard = (props) => {
         </span>
       </div>
       <div className="productCartBtnGroup button-group mt-3">
-        <button type="button" className="border-0 p-1 me-1">
+        <button type="button" className="border-0 me-1">
           <FaShoppingBasket className="tada me-1" />
           AddToCart
         </button>
-        <button type="button" className="border-0 p-1 ms-1">
+        <button type="button" className="border-0 ms-1">
           <FaHeart className="tada me-1" />
           Save
         </button>
