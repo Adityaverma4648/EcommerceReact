@@ -249,6 +249,42 @@ body::-webkit-scrollbar{
     min-width: 100vw;
     background: linear-gradient(45deg, rgba(177, 177, 177,0.8), rgb(30, 0, 255));
 }
+
+
+
+/*  productContainer  */
+.productContainerCont{
+    background-color: #fff;
+}
+.ProductCard{
+    width: 20vw;
+    height: 45vh;
+    padding: 5px 0px;
+    border-radius: 10px;
+    background-color: rgb(174, 113, 232);
+    box-shadow: 5px 5px 10px  rgba(0, 0, 0,0.4) ;
+}
+.productImgContainer{
+    width: 20vw;
+    height: 75%;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productImgContainer img{
+    width: 80%;
+}
+.productCartBtnGroup button{
+     padding: 5px 10px;
+     color: #fff;
+     backdrop-filter: blur(0.3rem);
+     background-color: rgba(83, 18, 143, 0.8);
+     border-radius: 5px;
+}
+
 @keyframes fade{
     0%{
         opacity : 0;

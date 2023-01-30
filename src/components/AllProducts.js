@@ -5,7 +5,8 @@ import ProductCard from "./ProductCard.js";
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const productFetcher = () => {
-    setProducts(all);
+    const myProducts = all;
+    setProducts(myProducts);
     console.log(products);
   };
 
@@ -14,8 +15,8 @@ const AllProducts = () => {
   });
 
   return (
-    <div className="CompContainer">
-      <div className="ProductContainer">
+    <div className="CompContainer productContainerCont">
+      <div className="ProductContainer container d-flex justify-content-center align-items-center flex-wrap">
         {products.map((ar) => {
           return (
             <ProductCard
@@ -27,6 +28,8 @@ const AllProducts = () => {
               year={ar.year}
               price={ar.price}
               rating={ar.rating}
+              color={ar.color}
+              quantity={ar.quantity}
             />
           );
         })}
