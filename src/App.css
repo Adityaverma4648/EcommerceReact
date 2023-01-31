@@ -114,9 +114,8 @@ body::-webkit-scrollbar{
 }
 
 /*  sidebar Ends */
-/*  header */
+/*  header ----------------------------------------------------------------------*/
 .navbarCont {
-    /* background-color: red; */
     width: 95vw;
     display: flex;
     align-items: center;
@@ -160,7 +159,7 @@ body::-webkit-scrollbar{
     width: 23%;
 }
 
-/*  header ends--------------- */
+/*  header ends------------------------------------------------------------- */
 
 /* compContainer */
 .CompContainer{
@@ -180,7 +179,7 @@ body::-webkit-scrollbar{
 
 
 
-/* Home */
+/* ----------------------------------Home-------------------------------*/
 .welcomeHomeContSliderCont{
     z-index: 999;
     background-image: url("https://images.unsplash.com/photo-1674020332280-579b95f2b267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
@@ -211,7 +210,7 @@ body::-webkit-scrollbar{
 .illustrationCont{
     user-select: none;
 }
-/*  slider */
+/*  slider ----------------------------------------------------------------------*/
 .arrowIcons{
     background: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5));
     background-position: center;
@@ -252,9 +251,10 @@ body::-webkit-scrollbar{
 
 
 
-/*  productContainer  */
+/*  productContainer ---------------------------------------------------------------------------*/
 .productContainerCont{
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(207, 207, 207);
+    padding: 1rem 0px;
 }
 .ProductCard{
     width: 20vw;
@@ -267,7 +267,6 @@ body::-webkit-scrollbar{
 .bodyHeading{
     max-height: 3vh;
     overflow: hidden;
-    /* background-color: aqua; */
 }
 .productImgContainer{
     width: 20vw;
@@ -342,5 +341,9 @@ body::-webkit-scrollbar{
         
             .welcomeHomeContSlider {
                 max-height: 28vh;
+            }
+            .ProductCard {
+                width: 60vw;
+                height: 43vh;
             }
 }

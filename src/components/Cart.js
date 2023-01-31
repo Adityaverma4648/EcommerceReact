@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import {useBasketTotal} from '../reducer'; 
+import {useStateValue} from "../redux/StateProvider";
+import {Link} from "react-router-dom";
+import CartItem from './CartItem';
 
 const Cart = () => {
+  const [{ basket, user }, dispatch] = useStateValue();
   return (
-    <div className='CompContainer'>Cart</div>
+    <div className='CompContainer cartCompContainer'>
+         {basket.map((ar)=>{
+           return <CartItem  id = {ar.id} fullName= {ar.fullName} description= {ar.description} image= {ar.image} price= {ar.price} producedBy= {ar.producedBy} year= {ar.year} rating= {ar.rating} color= {ar.color} quantity={ar.quantity} />
+         })}
+    </div>
   )
 }
 
-export default Cart
+export default Cart;
