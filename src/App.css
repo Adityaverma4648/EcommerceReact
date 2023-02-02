@@ -188,7 +188,7 @@ body::-webkit-scrollbar{
 .welcomeHomeCont{
     height: 35vh;
     color: #fff;
-    background: linear-gradient(45deg, rgb(177, 177, 177),rgb(30, 0, 255));
+    background: linear-gradient(45deg, rgb(177, 177, 177),rgb(85, 0, 255));
 }
 .welcomeHomeButtonCont{
     width: 250px;
@@ -244,7 +244,7 @@ body::-webkit-scrollbar{
 .catHeading{
     color: #fff;
     min-width: 100vw;
-    background: linear-gradient(45deg, rgba(177, 177, 177,0.8), rgb(30, 0, 255));
+    background: linear-gradient(45deg, rgba(177, 177, 177,0.8), rgb(85, 0, 255));
 }
 
 
