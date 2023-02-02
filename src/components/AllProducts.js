@@ -29,8 +29,8 @@ const AllProducts = () => {
       productFetcher(clothing);
     } else if (e.target.value === "sport") {
       productFetcher(sport);
-    } else if (e.target.value === "store") {
-      productFetcher(store);
+    // } else if (e.target.value === "store") {
+    //   productFetcher(store);
     } else if (e.target.value === "television") {
       productFetcher(television);
     }

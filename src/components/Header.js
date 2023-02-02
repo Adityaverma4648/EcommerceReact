@@ -10,8 +10,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Header = ({ search }) => {
-  // const [search,setSearch] = useState("");
+const Header = () => {
+  const [search, setSearch] = useState("");
+
   const handleSearch = () => {
     console.log(search);
   };
