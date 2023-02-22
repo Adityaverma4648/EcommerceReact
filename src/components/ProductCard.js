@@ -1,20 +1,16 @@
 import React from "react";
+import { useStateValue } from "../redux/StateProvider";
 import { FaShoppingBasket, FaHeart } from "react-icons/fa";
-import { dispatch } from "react";
 const ProductCard = (props) => {
-
+  const [{user},dispatch] = useStateValue();
   const AddToCart = (e) => {
-    if(e.target.tagName === "BUTTON"){
-      e.target.style.backgroundColor = "white"; 
-      e.target.style.color = "green"; 
-    }
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
         id: props.id,
         fullName: props.fullName,
         description: props.description,
-        image: props.image,
+        image: props.url,
         price: props.price,
         producedBy: props.producedBy,
         year: props.year,
@@ -27,16 +23,13 @@ const ProductCard = (props) => {
   };
 
   const Saved = (e) => {
-    e.target.style.color = "red";
-    e.target.style.backgroundColor = "white";
-
     dispatch({
       type: "ADD_TO_SAVED",
       item: {
         id: props.id,
         fullName: props.fullName,
         description: props.description,
-        image: props.image,
+        image: props.url,
         price: props.price,
         producedBy: props.producedBy,
         year: props.year,
@@ -71,8 +64,7 @@ const ProductCard = (props) => {
           AddToCart
         </button>
         <button type="button" className="border-0 ms-1" onClick={Saved}>
-          <FaHeart className="tada me-1" />
-          Save
+          <FaHeart />
         </button>
       </div>
     </div>

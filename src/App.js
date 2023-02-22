@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../src/App.css";
 import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import Header from "./components/Header.js";
@@ -12,9 +12,15 @@ import AfterSales from "./components/AfterSales";
 import Feedback from "./components/Feedback";
 import Settings from "./components/Settings";
 import Cart from "./components/Cart";
+import SignUp from "./components/SignUp";
+import SingleCategory from "./components/SingleCategory"
+
 
 const App = () => {
-  const handleSearch = () => {};
+  
+  const [user,setUser] = useState();  
+  const handleSearch = () => {return null;};
+
   return (
     <>
       <BrowserRouter>
@@ -24,6 +30,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/explore" element={<Explore />}></Route>
+             <Route path="/signUp" element={<SignUp />}></Route>
+             <Route path="/category?id" element={<SingleCategory />}></Route>
             <Route path="/products" element={<AllProducts />}></Route>
             <Route path="/saved" element={<Saved />}></Route>
             <Route path="/orderNdelivery" element={<OrderNdelivery />}></Route>

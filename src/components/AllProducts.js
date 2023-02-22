@@ -29,8 +29,8 @@ const AllProducts = () => {
       productFetcher(clothing);
     } else if (e.target.value === "sport") {
       productFetcher(sport);
-    // } else if (e.target.value === "store") {
-    //   productFetcher(store);
+      // } else if (e.target.value === "store") {
+      //   productFetcher(store);
     } else if (e.target.value === "television") {
       productFetcher(television);
     }
@@ -59,27 +59,30 @@ const AllProducts = () => {
           })}
         </div>
       </div>
-      <div className="col-sm-2 position-absolute end-0 bg-danger d-flex flex-column justify-content-end align-items-center mt-1 me-1">
+      <div className="allProdFilterationCont col-sm-2 position-absolute end-0 d-flex flex-column justify-content-end align-items-center mt-2 me-2">
         <div className="h5">
           <FaExchangeAlt />
+          <span className="h5 px-1">Filter</span>
         </div>
         <div className="container d-flex flex-column justify-content-center align-items-center py-2 border-dark border-top">
-          <label htmlFor="category">Select Category</label>
+          <label htmlFor="category" className="h5 container">
+            Select Category
+          </label>
           <select
             name="category"
             id="category"
             onChange={changeCategory}
-            style={{ width: "60%", border: "none" }}
+            className="container"
           >
             <option value="all">all</option>
             <option value="bag">bags</option>
             <option value="clothing">clothings</option>
-            <option value="store">stores</option>
             <option value="sport">sports</option>
             <option value="television">televisions</option>
           </select>
         </div>
         <div className="container d-flex flex-column justify-content-center align-items-center border-top border-dark">
+          <span className="h5 container ">Price</span>
           <fieldset>
             <label htmlFor="price" className="px-2">
               0-50K

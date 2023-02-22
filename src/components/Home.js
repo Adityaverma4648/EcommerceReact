@@ -17,6 +17,7 @@ import {
   FaCaretRight,
   FaShoppingBag,
 } from "react-icons/fa";
+import SingleCategory from "./SingleCategory";
 
 const Home = () => {
   // sliderData
@@ -154,35 +155,33 @@ const Home = () => {
           style={{ height: "50vh" }}
         >
           <div
-            className="arrowIcons rounded-1 p-3 d-flex justify-content-center align-items-center me-1"
+            className="arrowIcons rounded-1 d-flex justify-content-center align-items-center me-1 bg-transparent"
             onClick={SliderDecrementor}
             style={{
               height: "48vh",
               zIndex: "9",
               cursor: "pointer",
-              fontSize: "21px",
+              fontSize: "25px",
             }}
           >
             <FaCaretLeft />
           </div>
           <div
-            className="img-container d-flex justify-content-center align-items-center"
-            style={{ width: "100%", height: "48vh" }}
+            className="img-container"
           >
             {SliderImages?.slice(sliderIndex - 1, sliderIndex).map((ar) => {
               return (
                 <div
-                  className="img-container-child"
+                  className="container-fluid img-container-child"
                   key={ar.id}
-                  sytle={{ height: "100%", width: "100%" }}
                 >
-                  <img src={ar.src} alt={ar.alt} style={{ width: "100%" }} />
+                  <img src={ar.src} alt={ar.alt}/>
                 </div>
               );
             })}
           </div>
           <div
-            className="arrowIcons rounded-1 p-3 d-flex justify-content-center align-items-center ms-1"
+            className="arrowIcons rounded-1 d-flex justify-content-center align-items-center ms-1"
             onClick={SliderIncrementor}
             style={{
               height: "48vh",
@@ -195,7 +194,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+       {/* Block end */}
 
+  {/*  category Container */}
       <div className="allCategoriesCont container-fluid d-flex flex-column justify-content-center align-items-center bg-light">
         <div className="container-fluid d-flex justify-content-center align-items-center py-4 h3 catHeading">
           <span className="container bg-transparent">
@@ -204,23 +205,20 @@ const Home = () => {
           </span>
         </div>
         <div
-          className="container d-flex flex-wrap justify-content-center align-items-center"
-          style={{ height: "30vh" }}
+          className="categoryCont container d-flex flex-wrap justify-content-center align-items-center"
+          style={{minHeight:"35vh"}}
         >
           {Categories.map((ar) => {
             return (
-              <a
-                href="https://localhost:3000/category?id"
-                className="border border-1 border-dark text-decoration-none text-dark col-sm-2 m-1 d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src={ar.src}
-                  alt={ar.heading}
-                  className="p-2"
-                  style={{ width: "85%" }}
-                />
-                <h5 className="text-center">{ar.heading}</h5>
-              </a>
+               <Link to={SingleCategory}className="text-decoration-none categoryCard col-sm-2 bg-light p-2 m-1 border border-2 border-secondary">
+                    <img
+                       src={ar.src}
+                       alt={ar.heading}
+                       className="p-2 col-sm-12"
+                    />
+                      <h5 className="text-dark text-center">{ar.heading}</h5>
+
+              </Link>
             );
           })}
         </div>

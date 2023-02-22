@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useStateValue } from "../redux/StateProvider";
 import {
   FaCamera,
   FaMicrophone,
@@ -11,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [{ basket, user }, dispatch] = useStateValue();
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
@@ -68,7 +70,7 @@ const Header = () => {
             className="text-danger d-flex justify-content-center align-items-center"
             style={{ fontWeight: "500", fontSize: "18px" }}
           >
-            0
+            {basket?.length}
           </span>
           <Link to="/cart">
             <button
