@@ -6,7 +6,7 @@ import {
   FaSearch,
   FaUser,
   FaBell,
-  FaSun,
+  FaCog,
   FaShoppingCart,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -20,54 +20,54 @@ const Header = () => {
   };
   return (
     <div className="Header">
-      <div className="logoCont">LOGO</div>
-      <div className="navbarCont">
-        <div className="d-flex justify-content-center align-items-center">
+      <div className="logoHeader flex items-center justify-center border-r border-gray-400 font-semibold">LOGO</div>
+      <div className="w-full h-full flex justify-center items-center">
+        <div className="h-full w-1/2 px-2 d-flex justify-start items-center ">
           {/* search form */}
-          <div className="searchForm d-flex justify-content-center align-items-center text-primary">
-            <FaSearch className="mx-1" style={{ fontSize: "19px" }} />
+          <div className="w-2/4 flex justify-end items-center text-primary">
+            <FaSearch className="mx-2" style={{ fontSize: "23px" }} />
             <input
               type="text"
               name="searchInp"
               id="searchInp"
-              className="bg-transparent p-2 rounded-5"
+              className="w-3/4 bg-transparent p-2 rounded-3xl  text-gray-900"
               placeholder="Search"
             />
           </div>
 
           {/* Search Icons  */}
-          <div className="searchOptions">
+          <div className="w-1/4 flex justify-center items-center">
             <button
               type="button"
-              className="border-0 rounded-0 bg-transparent text-primary"
+              className="mx-2 border-0 rounded-0 bg-transparent text-primary"
             >
-              <FaCamera />
+              <FaCamera style={{fontSize:"19px"}}/>
             </button>
             <button
               type="button"
-              className="border-0 rounded-0 bg-transparent text-primary"
+              className="mx-2 border-0 rounded-0 bg-transparent text-primary"
             >
-              <FaMicrophone />
+              <FaMicrophone style={{fontSize:"19px"}}/>
             </button>
           </div>
         </div>
-        {/*  user oriented icons */}
-        <div className="userOrientedIconOptions d-flex justify-content-end align-items-center">
+        <div className="bg-pink-300 w-1/2 h-full flex justify-end items-center px-4" >
+            {/*  user oriented icons */}
+        <div className="w-3/4 mx-3 flex justify-end items-center">
           <button type="button" className="btn border-0 bg-transparent">
-            <FaBell />
+            <FaBell style={{fontSize:"19px"}} />
           </button>
           <button type="button" className="btn border-0 bg-transparent">
-            <FaUser />
+            <FaUser style={{fontSize:"19px"}} />
           </button>
           <button type="button" className="btn border-0 bg-transparent">
-            <FaSun />
+            <FaCog style={{fontSize:"19px"}} />
           </button>
         </div>
 
         {/*  cart */}
-        <div className="cartContIcon d-flex justify-content-end align-items-center">
+        <div className="d-flex justify-content-end align-items-center">
           <span
-            className="text-danger d-flex justify-content-center align-items-center"
             style={{ fontWeight: "500", fontSize: "18px" }}
           >
             {basket?.length}
@@ -81,6 +81,7 @@ const Header = () => {
               <FaShoppingCart />
             </button>
           </Link>
+        </div>
         </div>
       </div>
     </div>

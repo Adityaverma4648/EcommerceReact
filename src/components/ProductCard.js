@@ -4,6 +4,7 @@ import { FaShoppingBasket, FaHeart } from "react-icons/fa";
 const ProductCard = (props) => {
   const [{user},dispatch] = useStateValue();
   const AddToCart = (e) => {
+    e.target.
     dispatch({
       type: "ADD_TO_BASKET",
       item: {

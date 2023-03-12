@@ -17,7 +17,7 @@ import {
   FaCaretRight,
   FaShoppingBag,
 } from "react-icons/fa";
-import SingleCategory from "./SingleCategory";
+import SingleCategory from "../components/SingleCategory";
 
 const Home = () => {
   // sliderData

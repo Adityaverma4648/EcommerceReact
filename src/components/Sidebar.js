@@ -4,7 +4,7 @@ import {
   FaExclamationCircle,
   FaHeart,
   FaPhoneAlt,
-  FaSun,
+  FaCog,
   FaTruckMoving,
   FaHome,
   FaBoxes,
@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
-    <div className="Sidebar d-flex flex-column d-flex flex-column justify-content-between left-0 position-absolute">
+    <div id="Sidebar" className="Sidebar d-flex flex-column d-flex flex-column justify-content-between left-0 position-absolute">
       <div className="sidebarNavIconsList d-flex flex-column justify-content-evenly align-items-center">
         {/*  Home  */}
         <li
@@ -92,7 +92,7 @@ const Sidebar = () => {
           title="Settings"
         >
           <Link to="/Settings" className="d-flex justify-content-center align-items-center py-3 px-3">
-            <FaSun className="text-dark" />
+            <FaCog className="text-dark" />
           </Link>
         </li>
       </div>

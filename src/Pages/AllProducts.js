@@ -3,9 +3,8 @@ import all from "../data/all.js";
 import bag from "../data/bag.js";
 import clothing from "../data/clothing.js";
 import sport from "../data/sport.js";
-import store from "../data/store.js";
 import television from "../data/television";
-import ProductCard from "./ProductCard.js";
+import ProductCard from "../components/ProductCard.js";
 
 import { FaExchangeAlt } from "react-icons/fa";
 

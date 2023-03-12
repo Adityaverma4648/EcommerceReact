@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin:0;
     padding: 0;
@@ -12,7 +16,7 @@ body{
 body::-webkit-scrollbar{
     display: none;
 }
-/* Header */
+/* Header --------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .Header{
     z-index: 9999999;
     height: 60px;
@@ -20,21 +24,13 @@ body::-webkit-scrollbar{
     background-color: rgb(223, 223, 223);
     border-bottom: 1px solid rgb(153, 153, 153);
 }
-.logoCont{
-    height: 100%;
-    min-width: 75px;
-    border-right: 1px solid rgb(153, 153, 153);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
+.logoHeader{
+    min-width: 78px;
 }
-
-
-/*  sidebar Styles */
+/*  sidebar Styles ------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .Sidebar{
     z-index: 9999999;
-        background-color: rgb(223, 223, 223);
+    background-color: rgb(223, 223, 223);
     height: 94vh;
     width: 75px;
     font-size: 20px ;
@@ -111,50 +107,6 @@ body::-webkit-scrollbar{
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
     }
-}
-
-/*  sidebar Ends */
-/*  header ----------------------------------------------------------------------*/
-.navbarCont {
-    width: 95vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.searchForm {
-    width: 30vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.searchForm input {
-    width: 90%;
-
-}
-.userOrientedIconOptions {
-    width: 50vw;
-    padding: 0.5rem 0px;
-}
-
-.userOrientedIconOptions button {
-    padding: 0px 1rem;
-    font-size: 19px;
-}
-
-.searchOptions {
-    width: 20%;
-    font-size: 19px;
-    display: flex;
-    justify-content: flex-start;
-}
-.searchOptions button{
-    padding: 0px 5px;
-}
-
-.cartContIcon {
-    width: 5%;
 }
 
 /*  header ends------------------------------------------------------------- */
@@ -324,6 +276,15 @@ body::-webkit-scrollbar{
 }
 
 
+/*  cart item */
+.card{
+    height: 40vh;
+    width: 60vw;
+    background: linear-gradient(45deg, rgb(255, 255, 255), rgb(132, 0, 255));
+    padding: 1rem;
+}
+
+
 
 /*  signUp Page */
   .SignUp{
@@ -334,80 +295,3 @@ body::-webkit-scrollbar{
     align-items: center;
     background-color: rgb(207, 207, 207);
   }
-
-@media only screen and (max-width : 1100px ){
-    /* header  */
-    .userOrientedIconOptions {
-            width: 30vw;
-        }
-    /*  header ends */
-       .illustrationCont img{
-           display: none;
-       }
-       .arrowIcons{
-            max-height: 25vh;
-        }
-        .img-container{
-            max-height: 25vh;
-        }
-        .welcomeHomeContSlider{
-            max-height: 28vh;
-        }
-        .ProductCard {
-            width: 30vw;
-            height: 43vh;
-            padding: 5px 0px;
-            border-radius: 10px;
-            background-color: rgb(174, 113, 232);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-        }
-        .categoryCard{
-            width: 50%;
-        }
-
-}
-
-@media only screen and (max-width:750px){
-        /* header  */
-            .userOrientedIconOptions {
-                width: 10vw;
-            }
-            .userOrientedIconOptions button{
-                margin: 0;
-                padding: 0px 5px;
-            }
-        
-            /*  header ends */
-        .arrowIcons {
-                max-height: 18vh;
-                width: 1rem;
-                text-align: center;
-                padding: 0px;
-                font-size: 16px;
-            }
-        
-            .img-container {
-                max-height: 18vh;
-            }
-        
-            .welcomeHomeContSlider {
-                max-height: 28vh;
-            }
-            .ProductCard {
-                width: 60vw;
-                height: 43vh;
-            }
-            .Sidebar{
-                display: none;
-            }
-            .categoryCard {
-                width: 60%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .categoryCard img{
-                width: 95%;
-            }
-}
