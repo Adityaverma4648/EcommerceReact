@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
-    <div id="Sidebar" className="Sidebar d-flex flex-column d-flex flex-column justify-content-between left-0 position-absolute">
+    <div className="Sidebar hidden md:flex md:flex-col md:justify-between md:left-0 position-absolute" id="Sidebar">
       <div className="sidebarNavIconsList d-flex flex-column justify-content-evenly align-items-center">
         {/*  Home  */}
         <li

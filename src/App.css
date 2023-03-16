@@ -24,9 +24,7 @@ body::-webkit-scrollbar{
     background-color: rgb(223, 223, 223);
     border-bottom: 1px solid rgb(153, 153, 153);
 }
-.logoHeader{
-    min-width: 78px;
-}
+
 /*  sidebar Styles ------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .Sidebar{
     z-index: 9999999;
@@ -137,29 +135,7 @@ body::-webkit-scrollbar{
     background-position: center;
     background-size: cover;
 }
-.welcomeHomeCont{
-    height: 35vh;
-    color: #fff;
-    background: linear-gradient(45deg, rgb(177, 177, 177),rgb(174, 113, 232));
-}
-.welcomeHomeButtonCont{
-    width: 250px;
-    z-index: 99;
-}
-.welcomeHomeCont h4,span{
-    z-index: 99;
-}
-.welcomeHomeButtonCont button{
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-}
-.welcomeHomeButtonCont button:hover{
-    background-color: #fff;
-    box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.799);
-}
-.illustrationCont{
-    user-select: none;
-}
+
 /*  slider ----------------------------------------------------------------------*/
 .arrowIcons{
     width: 60px;

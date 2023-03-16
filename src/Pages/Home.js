@@ -8,36 +8,16 @@ import desktop from "../svg/desktop.svg";
 import sport from "../svg/sport.svg";
 import sneaker from "../svg/sneaker.svg";
 import watch from "../svg/watch.svg";
+import Welcome from "../components/Welcome";
 
 import {
-  FaExternalLinkAlt,
-  FaCompass,
-  FaFingerprint,
-  FaCaretLeft,
-  FaCaretRight,
   FaShoppingBag,
 } from "react-icons/fa";
 import SingleCategory from "../components/SingleCategory";
+import Slider from "../components/Slider";
 
 const Home = () => {
-  // sliderData
-  const SliderImages = [
-    {
-      id: 1,
-      src: "https://icms-image.slatic.net/images/ims-web/c7d94659-af07-4498-ad49-befa8db2014d.jpg",
-      alt: "001",
-    },
-    {
-      id: 2,
-      src: "https://icms-image.slatic.net/images/ims-web/de05edb4-5dbe-471a-923f-ffafb580b072.jpg",
-      alt: "002",
-    },
-    {
-      id: 3,
-      src: "https://icms-image.slatic.net/images/ims-web/be202271-1932-4abd-bde3-b73503577adc.jpg",
-      alt: "003",
-    },
-  ];
+  
   // CategoryData
   const Categories = [
     {
@@ -67,157 +47,39 @@ const Home = () => {
     },
   ];
 
-  const [sliderIndex, setSliderindex] = useState(1);
-  // sliderIncrement fun
-  const SliderIncrementor = () => {
-    var prevIndex = sliderIndex;
-    if (prevIndex > 2) {
-      prevIndex = 1;
-      // prevIndex += 1;
-      // console.log(prevIndex);
-      setSliderindex(prevIndex);
-    } else {
-      prevIndex += 1;
-      // console.log(prevIndex);
-      setSliderindex(prevIndex);
-    }
-  };
-  // SliderDecrement fun
-  const SliderDecrementor = () => {
-    var prevIndex = sliderIndex;
-    if (prevIndex <= 1) {
-      prevIndex = 3;
-      setSliderindex(prevIndex);
-    } else {
-      prevIndex -= 1;
-      setSliderindex(prevIndex);
-    }
-  };
-
   const onScrollAnimation = () => {
     const illustrationCont = document.getElementById("illustrationCont");
     illustrationCont.classList.add("onScrollAnimation");
   };
+
+
   return (
     <div className="CompContainer">
-      <div
-        className="container-fluid d-flex justify-content-center align-items-center"
-        style={{ minWidth: "100vw" }}
-      >
-        {/* header illustrations */}
-        <div
-          className="illustrationCont container position-absolute right-0 d-flex justify-content-end"
-          style={{ height: "35vh" }}
-          onScroll={onScrollAnimation}
-          id="illustrationCont"
-        >
-          <img
-            src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-banner-decoration-3688632-3231445.png"
-            alt="Welcome illustration"
-            style={{ height: "95%" }}
-          />
-        </div>
-        {/* illustrationCont ends here */}
-        <div
-          className="welcomeHomeCont container-fluid mt-1 d-flex flex-column align-items-center justify-content-center pt-4"
-          style={{ minWidth: "100vw" }}
-        >
-          <h4>Welcome to ShopCart</h4>
-          <span>
-            The 2023 Best Online Retail Store with over 2B users in the world.
-            Explore Sign Up.....
-            <FaExternalLinkAlt
-              className="ms-3"
-              style={{ fontSize: "16px" }}
-            ></FaExternalLinkAlt>
-          </span>
-          <div className="py-4 welcomeHomeButtonCont d-flex justify-content-evenly align-items-center">
-            <Link to="/explore">
-              <button type="button" className="btn">
-                <FaCompass className="me-1" />
-                Explore
-              </button>
-            </Link>
-            <Link to="/signUp">
-              <button type="button" className="btn">
-                <FaFingerprint className="me-1" />
-                SignUp
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
+
+       {/* welcomeContainer */}
+       <Welcome />
 
       {/*  sliderCont */}
-      <div className="welcomeHomeContSliderCont container-fluid">
-        <div
-          className="welcomeHomeContSlider px-1 container position-relative d-flex justify-content-between align-items-center"
-          style={{ height: "50vh" }}
-        >
-          <div
-            className="arrowIcons rounded-1 d-flex justify-content-center align-items-center me-1 bg-transparent"
-            onClick={SliderDecrementor}
-            style={{
-              height: "48vh",
-              zIndex: "9",
-              cursor: "pointer",
-              fontSize: "25px",
-            }}
-          >
-            <FaCaretLeft />
-          </div>
-          <div
-            className="img-container"
-          >
-            {SliderImages?.slice(sliderIndex - 1, sliderIndex).map((ar) => {
-              return (
-                <div
-                  className="container-fluid img-container-child"
-                  key={ar.id}
-                >
-                  <img src={ar.src} alt={ar.alt}/>
-                </div>
-              );
-            })}
-          </div>
-          <div
-            className="arrowIcons rounded-1 d-flex justify-content-center align-items-center ms-1"
-            onClick={SliderIncrementor}
-            style={{
-              height: "48vh",
-              zIndex: "9",
-              cursor: "pointer",
-              fontSize: "21px",
-            }}
-          >
-            <FaCaretRight />
-          </div>
-        </div>
-      </div>
-       {/* Block end */}
+      <Slider />
 
   {/*  category Container */}
-      <div className="allCategoriesCont container-fluid d-flex flex-column justify-content-center align-items-center bg-light">
-        <div className="container-fluid d-flex justify-content-center align-items-center py-4 h3 catHeading">
-          <span className="container bg-transparent">
+      <div className="w-full flex flex-col justify-center align-center z-50">
+        <div className="container-fluid ms-4 flex justify-start items-center py-4 h3 catHeading">
             <FaShoppingBag className="me-2 shakeIcons" />
             Categories
-          </span>
         </div>
         <div
-          className="categoryCont container d-flex flex-wrap justify-content-center align-items-center"
-          style={{minHeight:"35vh"}}
+          className="md:w-3/4 w-full py-4 flex flex-wrap justify-center items-center bg-white"
         >
           {Categories.map((ar) => {
             return (
-               <Link to={SingleCategory}className="text-decoration-none categoryCard col-sm-2 bg-light p-2 m-1 border border-2 border-secondary">
+               <Link to={SingleCategory} className="w-8/12 md:w-1/5 flex flex-col justify-center items-center">
+                    <span className="md:text-xl text-dark text-center">{ar.heading}</span>
                     <img
                        src={ar.src}
                        alt={ar.heading}
-                       className="p-2 col-sm-12"
+                       className="p-2 w-10/12"
                     />
-                      <h5 className="text-dark text-center">{ar.heading}</h5>
-
               </Link>
             );
           })}
