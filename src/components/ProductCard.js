@@ -43,26 +43,25 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className="ProductCard text-center m-1 my-4">
+    <div className="md:w-1/5 w-4/5  bg-white py-1 shadow-lg shadow-indigo-500/50 text-center m-1 my-4">
       <div className="container productImgContainer">
         <img src={props.url} alt={props.fullName} />
       </div>
       <div className="body d-flex flex-column text-center">
-        <strong className="text-white bodyHeading">{props.fullName}</strong>
+        <strong className="bodyHeading">{props.fullName}</strong>
         <div className="d-flex justify-content-center align-items-center text-center">
-          <span className="text-light">{props.brand}</span>
-          <span className="text-light">{props.rating}</span>
+          <span>{props.brand}</span>
+          <span>{props.rating}</span>
         </div>
         <span>
-          <strong className="text-white">
+          <strong className="">
             Rs : {(props.price * 84.4).toFixed(2)}
           </strong>
         </span>
       </div>
       <div className="productCartBtnGroup button-group mt-3">
-        <button type="button" className="border-0 me-1" onClick={AddToCart}>
-          <FaShoppingBasket className="tada me-1" />
-          AddToCart
+        <button type="button" className="hover:animate-bounce border-0 me-1" onClick={AddToCart}>
+          <FaShoppingBasket className=" me-1" />
         </button>
         <button type="button" className="border-0 ms-1" onClick={Saved}>
           <FaHeart />

@@ -63,13 +63,13 @@ const Home = () => {
       <Slider />
 
   {/*  category Container */}
-      <div className="w-full flex flex-col justify-center align-center z-50">
-        <div className="container-fluid ms-4 flex justify-start items-center py-4 h3 catHeading">
+      <div className="w-full bg-white flex flex-col justify-center align-center z-50">
+        <div className="w-8/12 ms-4 flex justify-start items-center py-4 h3 catHeading">
             <FaShoppingBag className="me-2 shakeIcons" />
             Categories
         </div>
         <div
-          className="md:w-3/4 w-full py-4 flex flex-wrap justify-center items-center bg-white"
+          className= "w-full md:w-3/4 py-4 flex flex-wrap justify-center items-center bg-white"
         >
           {Categories.map((ar) => {
             return (

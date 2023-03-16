@@ -5,8 +5,9 @@ import clothing from "../data/clothing.js";
 import sport from "../data/sport.js";
 import television from "../data/television";
 import ProductCard from "../components/ProductCard.js";
+import ToggleFilterButton from "../components/ToggleFilterButton.js";
 
-import { FaExchangeAlt } from "react-icons/fa";
+import { FaExchangeAlt , FaRegTimesCircle } from "react-icons/fa";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([0]);
@@ -37,8 +38,9 @@ const AllProducts = () => {
 
   return (
     <>
+       <ToggleFilterButton />
       <div className="CompContainer productContainerCont">
-        <div className="ProductContainer container d-flex justify-content-center align-items-center flex-wrap">
+        <div className="ProductContainer w-10/12 d-flex flex-wrap justify-content-center align-items-center">
           {products?.map((ar) => {
             return (
               <ProductCard
@@ -58,20 +60,27 @@ const AllProducts = () => {
           })}
         </div>
       </div>
-      <div className="allProdFilterationCont col-sm-2 position-absolute end-0 d-flex flex-column justify-content-end align-items-center mt-2 me-2">
-        <div className="h5">
-          <FaExchangeAlt />
-          <span className="h5 px-1">Filter</span>
+      <div className="hidden md:flex md:flex-col md:justify-center md:items-center bottom-0 py-2 w-screen absolute bg-gradient-to-r from-purple-600/50 to-blue-900 backdrop-blur-sm" id="FilterProducts">
+        <div className="w-8/12 h-10 bg-white flex justify-between items-center">
+          <div className="h5 h-full px-1 flex justify-center items-center">
+               <FaExchangeAlt className="mx-1" />
+               Filter
+          </div>
+          <div className="h5 h-full px-1 flex justify-center items-center">
+                 <button type="button" className="btn" >
+                     <FaRegTimesCircle />  
+                 </button>
+          </div>
         </div>
-        <div className="container d-flex flex-column justify-content-center align-items-center py-2 border-dark border-top">
-          <label htmlFor="category" className="h5 container">
+        <div className="w-8/12 h-20 d-flex flex-column justify-content-center align-items-center py-2 border-dark border-top bg-white ">
+          <label htmlFor="category" className="container font-semibold">
             Select Category
           </label>
           <select
             name="category"
             id="category"
             onChange={changeCategory}
-            className="container"
+            className="w-11/12 border border-secondary border-opacity-50 py-1"
           >
             <option value="all">all</option>
             <option value="bag">bags</option>
@@ -80,8 +89,8 @@ const AllProducts = () => {
             <option value="television">televisions</option>
           </select>
         </div>
-        <div className="container d-flex flex-column justify-content-center align-items-center border-top border-dark">
-          <span className="h5 container ">Price</span>
+        <div className="w-8/12 bg-white d-flex flex-column justify-content-center align-items-center border-top border-dark">
+          <span className="font-semibold container">Price</span>
           <fieldset>
             <label htmlFor="price" className="px-2">
               0-50K

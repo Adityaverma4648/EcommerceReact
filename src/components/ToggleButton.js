@@ -5,6 +5,8 @@ const ToggleButton = () => {
 
     const toggleSidebar = (e) =>{
         var Sidebar = document.getElementById('Sidebar');
+        
+
         if(Sidebar.style.display === "block"){
           Sidebar.style.display = "none";
         }else{
@@ -13,7 +15,7 @@ const ToggleButton = () => {
     } 
 
   return (
-    <button className='end-0 w-8 m-3 absolute md:hidden flex justify-center items-center' style={{zIndex:99999999}} onClick={(e)=>toggleSidebar(e)} >
+    <button className='end-0 w-8 m-3 absolute md:hidden flex justify-center items-center' style={{zIndex:9999999}} onClick={(e)=>toggleSidebar(e)} >
         <FaBars className='w-full h-full' />
     </button>
   )
