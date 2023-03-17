@@ -51,45 +51,31 @@ const Slider = () => {
         };
 
         return (
-            <div className="welcomeHomeContSliderCont container-fluid">
+            <div className="welcomeHomeContSliderCont w-screen flex justify-center items-center">
             <div
-              className="welcomeHomeContSlider px-1 container position-relative d-flex justify-content-between align-items-center"
-              style={{ height: "50vh" }}
+              className="welcomeHomeContSlider py-1 w-full h-80 md:w-8/12 md:h-auto relative d-flex justify-content-between align-items-center"
             >
               <div
-                className="arrowIcons rounded-1 md:relative flex justify-center items-center text-center me-1 absolute start-0 px-2"
+                className="rounded-1 md:relative flex justify-center items-center text-center ms-2 md:me-1 absolute start-0 p-2 bg-white cursor-pointer"
                 onClick={SliderDecrementor}
-                style={{
-                  height: "48vh",
-                  zIndex: "9",
-                  cursor: "pointer",
-                  fontSize: "25px",
-                }}
               >
                 <FaCaretLeft />
               </div>
-              <div
-                className="md:img-container"
-              >
+              <div className='h-full w-auto flex justfy-center items-center'>
                 {SliderImages?.slice(sliderIndex - 1, sliderIndex).map((ar) => {
                   return (
                     <div
+                      className='h-full w-auto flex items-center justify-center'
                       key={ar.id}
                     >
-                      <img src={ar.src} alt={ar.alt} />
+                      <img src={ar.src} className="h-full w-auto" alt={ar.alt} />
                     </div>
                   );
                 })}
               </div>
               <div
-                className="arrowIcons rounded-1 md:relative flex justify-center items-center text-center ms-1 absolute end-0 px-2"
+                className="rounded-1 md:relative flex justify-center items-center text-center me-2 md:ms-1 absolute end-0 p-2 bg-white cursor-pointer"
                 onClick={SliderIncrementor}
-                style={{
-                  height: "48vh",
-                  zIndex: "9",
-                  cursor: "pointer",
-                  fontSize: "21px",
-                }}
               >
                 <FaCaretRight />
               </div>

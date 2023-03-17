@@ -32,7 +32,7 @@ const Home = () => {
     },
     {
       id: 3,
-      heading: "Sport Accessories",
+      heading: "Sports",
       src: sport,
     },
     {
@@ -63,7 +63,7 @@ const Home = () => {
       <Slider />
 
   {/*  category Container */}
-      <div className="w-full bg-white flex flex-col justify-center align-center z-50">
+      <div className="w-screen bg-white flex flex-col justify-center items-center z-50">
         <div className="w-8/12 ms-4 flex justify-start items-center py-4 h3 catHeading">
             <FaShoppingBag className="me-2 shakeIcons" />
             Categories
@@ -73,12 +73,12 @@ const Home = () => {
         >
           {Categories.map((ar) => {
             return (
-               <Link to={SingleCategory} className="w-8/12 md:w-1/5 flex flex-col justify-center items-center">
+               <Link to={SingleCategory} className="border border-secondary w-8/12 md:w-1/5 flex flex-col justify-center items-center">
                     <span className="md:text-xl text-dark text-center">{ar.heading}</span>
                     <img
                        src={ar.src}
                        alt={ar.heading}
-                       className="p-2 w-10/12"
+                       className="w-10/12 h-10/12 p-4"
                     />
               </Link>
             );

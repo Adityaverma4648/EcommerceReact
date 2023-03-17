@@ -4,7 +4,6 @@ import { FaShoppingBasket, FaHeart } from "react-icons/fa";
 const ProductCard = (props) => {
   const [{user},dispatch] = useStateValue();
   const AddToCart = (e) => {
-    e.target.
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -43,7 +42,7 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className="md:w-1/5 w-4/5  bg-white py-1 shadow-lg shadow-indigo-500/50 text-center m-1 my-4">
+    <div className="lg:w-1/5 md:w-2/4 w-4/5 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 my-4">
       <div className="container productImgContainer">
         <img src={props.url} alt={props.fullName} />
       </div>
@@ -59,11 +58,11 @@ const ProductCard = (props) => {
           </strong>
         </span>
       </div>
-      <div className="productCartBtnGroup button-group mt-3">
-        <button type="button" className="hover:animate-bounce border-0 me-1" onClick={AddToCart}>
-          <FaShoppingBasket className=" me-1" />
+      <div className="productCartBtnGroup w-full mt-3 flex justify-center items-center">
+        <button type="button" className="w-1/2 hover:animate-bounce flex justify-center items-center py-3 " onClick={AddToCart}>
+          <FaShoppingBasket />
         </button>
-        <button type="button" className="border-0 ms-1" onClick={Saved}>
+        <button type="button" className="hover:animate-bounce w-1/2 flex justify-center items-center py-3 " onClick={Saved}>
           <FaHeart />
         </button>
       </div>

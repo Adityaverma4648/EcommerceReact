@@ -226,13 +226,8 @@ body::-webkit-scrollbar{
 .productImgContainer img{
     width: 80%;
 }
-.productCartBtnGroup button{
-     padding: 7px 15px;
-     color: #fff;
-     backdrop-filter: blur(0.3rem);
-     background-color: rgba(83, 18, 143, 0.8);
-     border-radius: 5px;
-     transition: all 0.2s ease-in-out;
+.ProductContainer::-webkit-scrollbar{
+    display: none;
 }
 .clickedSavedBtn{
     background-color: #fff;
