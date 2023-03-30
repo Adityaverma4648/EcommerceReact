@@ -14,7 +14,6 @@ import Settings from "./Pages/Settings";
 import Cart from "./Pages/Cart";
 import SignUp from "./Pages/SignUp";
 import SingleCategory from "./components/SingleCategory";
-import ToggleButton from "./components/ToggleButton";
 
 
 const App = () => {
@@ -26,8 +25,6 @@ const App = () => {
     <>
       <BrowserRouter>
         <Header search={handleSearch} />
-        <ToggleButton />
-
         <div className="d-flex">
           <Sidebar />
           <Routes>

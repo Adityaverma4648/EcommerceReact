@@ -47,12 +47,6 @@ const Home = () => {
     },
   ];
 
-  const onScrollAnimation = () => {
-    const illustrationCont = document.getElementById("illustrationCont");
-    illustrationCont.classList.add("onScrollAnimation");
-  };
-
-
   return (
     <div className="CompContainer">
 
@@ -64,7 +58,7 @@ const Home = () => {
 
   {/*  category Container */}
       <div className="w-screen bg-white flex flex-col justify-center items-center z-50">
-        <div className="w-8/12 ms-4 flex justify-start items-center py-4 h3 catHeading">
+        <div className="w-8/12 ms-4 flex justify-center items-center py-4 h3 catHeading">
             <FaShoppingBag className="me-2 shakeIcons" />
             Categories
         </div>
@@ -73,7 +67,7 @@ const Home = () => {
         >
           {Categories.map((ar) => {
             return (
-               <Link to={SingleCategory} className="border border-secondary w-8/12 md:w-1/5 flex flex-col justify-center items-center">
+               <Link key={ar.id} to={SingleCategory} className="border border-secondary w-6/12 md:w-1/5 flex flex-col justify-center items-center">
                     <span className="md:text-xl text-dark text-center">{ar.heading}</span>
                     <img
                        src={ar.src}

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStateValue } from "../redux/StateProvider";
-import { FaShoppingBasket, FaHeart } from "react-icons/fa";
+import { FaShoppingBasket, FaHeart ,FaStar } from "react-icons/fa";
 const ProductCard = (props) => {
   const [{user},dispatch] = useStateValue();
+
   const AddToCart = (e) => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -47,23 +48,27 @@ const ProductCard = (props) => {
         <img src={props.url} alt={props.fullName} />
       </div>
       <div className="body d-flex flex-column text-center">
-        <strong className="bodyHeading">{props.fullName}</strong>
-        <div className="d-flex justify-content-center align-items-center text-center">
-          <span>{props.brand}</span>
-          <span>{props.rating}</span>
+        <strong className="text-xl">{props.fullName}</strong>
+        <div className="d-flex flex-col justify-content-center align-items-center text-center">
+          <span className="font-semibold text-xl" >
+              {props.brand}
+          </span>
+          <span>
+              {props.rating}
+          </span>
         </div>
         <span>
-          <strong className="">
+          <strong>
             Rs : {(props.price * 84.4).toFixed(2)}
           </strong>
         </span>
       </div>
-      <div className="productCartBtnGroup w-full mt-3 flex justify-center items-center">
-        <button type="button" className="w-1/2 hover:animate-bounce flex justify-center items-center py-3 " onClick={AddToCart}>
-          <FaShoppingBasket />
+      <div className="productCartBtnGroup w-full mt-3 flex justify-center items-center ">
+        <button type="button" className="w-1/2 hover:animate-bounce flex justify-center items-center py-3 text-white bg-gradient-to-r from-purple-900 to-purple-400" onClick={AddToCart}>
+            <FaShoppingBasket />
         </button>
-        <button type="button" className="hover:animate-bounce w-1/2 flex justify-center items-center py-3 " onClick={Saved}>
-          <FaHeart />
+        <button type="button" className="hover:animate-bounce w-1/2 flex justify-center items-center py-3 text-white bg-gradient-to-l from-purple-900 to-purple-400" onClick={Saved}>
+            <FaHeart />
         </button>
       </div>
     </div>

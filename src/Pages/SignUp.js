@@ -1,26 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import whoosh from "../assets/whoosh.mp3";
 
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, SetPassword] = useState("");
-  const [audio] = useState(new Audio(whoosh));
-  const [play, setPlay] = useState(false);
   const [status, setStatus] = useState(false);
   const [dataSent, setDataSent] = useState(false);
   // const [animation, setAnimation] = useState(true);
-
-  useEffect(() => {
-    const playEffects = (e) => {
-      if (play) {
-        audio.play();
-        audio.volume = 0.2;
-      }
-    };
-    playEffects();
-  }, [play]);
 
   const onChecked = (e) => {
     var passwordInp = document.getElementById("passwordInp");
@@ -41,12 +28,7 @@ const SignUp = () => {
   const handlePassword = (e) => {
     SetPassword(e.target.value);
   };
-  const handleClick = (e) => {
-    setPlay(true);
-    if (play) {
-      audio.play();
-    }
-  };
+
   const onSubmission = (e) => {
     // setting data current hooks value to react-redux-arrays
     // setStatus(true);                onDataSent = setStatus(true)
@@ -96,8 +78,6 @@ const SignUp = () => {
             type="submit"
             className="submitInp"
             value="signUp"
-            onClick={handleClick}
-            onSubmit={onSubmission}
           />
         </div>
       </form>

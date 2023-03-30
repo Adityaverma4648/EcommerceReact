@@ -39,8 +39,8 @@ const AllProducts = () => {
     <>
        {/* <ToggleFilterButton /> */}
       <div className="CompContainer productContainerCont">
-      <div className="flex flex-col justify-center items-center py-2 md:w-8/12 w-10/12 bg-gradient-to-r from-purple-600/50 to-blue-900 backdrop-blur-sm" id="FilterProducts">
-        <div className="w-full h-10 bg-white flex justify-between items-center">
+      <div className="absolute m-2 h-10/12 right-0 py-2 bg-gradient-to-r from-purple-600/50 to-blue-900 backdrop-blur-sm">
+        <div className="w-full flex justify-between items-center">
           <div className="h5 h-full px-1 flex justify-center items-center">
                <FaExchangeAlt className="mx-1" />
                Filter
@@ -51,7 +51,7 @@ const AllProducts = () => {
                  </button>
           </div>
         </div>
-        <div className="w-full h-20 d-flex flex-column justify-content-center align-items-center py-2 border-dark border-top bg-white ">
+        <div className="w-full h-20 d-flex flex-column justify-content-center align-items-center py-2 border-dark border-top ">
           <label htmlFor="category" className="container font-semibold">
             Select Category
           </label>
@@ -84,6 +84,10 @@ const AllProducts = () => {
           </fieldset>
         </div>
       </div>
+
+
+
+      {/*  products container  */}
         <div className="ProductContainer h-screen w-10/12 d-flex flex-wrap justify-content-center align-items-center" style={{overflow:"scroll"}}>
           {products?.map((ar) => {
             return (
