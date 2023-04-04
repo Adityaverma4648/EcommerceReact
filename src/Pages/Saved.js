@@ -11,6 +11,7 @@ const Saved = () => {
     <div className='CompContainer Saved bg-danger justify-content-center'>
     {saved.map((ar)=>{
       return <SavedItem  
+                key = {ar.id}
                 id = {ar.id}
                 fullName= {ar.fullName}
                 description= {ar.description}

@@ -50,7 +50,6 @@ input:focus{
 }
 .sidebarNavIconsListElem{
     list-style-type: none;
-    border: 1px solid rgb(168, 255, 252);
     border-radius: 9px ;
     display: flex;
     justify-content: center;

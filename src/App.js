@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "../src/App.css";
-import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header.js";
 import Sidebar from "./components/Sidebar.js";
 import Explore from "./Pages/Explore.js";
@@ -14,17 +14,25 @@ import Settings from "./Pages/Settings";
 import Cart from "./Pages/Cart";
 import SignUp from "./Pages/SignUp";
 import SingleCategory from "./components/SingleCategory";
+import allProducts from "./data/all.js";
+
 
 
 const App = () => {
   
   const [user,setUser] = useState();  
-  const handleSearch = () => {return null;};
+  const [search, setSearch] = useState("");
+  const [result, setResult] = useState([]);
+
+  const handleSearch = () => {
+        console.log("Search")
+  };
+
 
   return (
     <>
       <BrowserRouter>
-        <Header search={handleSearch} />
+          <Header search={handleSearch} />
         <div className="d-flex">
           <Sidebar />
           <Routes>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,history } from "react";
+import React, { useState, useEffect } from "react";
 import { useStateValue } from "../redux/StateProvider";
 import {
   FaCamera,
@@ -65,7 +65,7 @@ const Header = ({ search }) => {
         .join("");
       // console.log(transcript);
       setNote(transcript);
-      history.push("/products/all");
+      // history.push("/products/all");
       mic.onerror = (event) => {
         console.log(event.error);
       };
@@ -84,17 +84,26 @@ const Header = ({ search }) => {
           <Link to="/" className="text-black text-decoration-none font-semibold" >LOGO</Link>
       </div>
       <div className="w-full h-full flex justify-center items-center">
-        <div className="h-full w-full px-2 d-flex justify-end items-center ">
+        <div className="h-full w-full px-2 d-flex justify-end items-center">
           {/* search form */}
-          <div className="h-8/12 flex justify-end items-center text-primary rounded-full border-r border-gray-900">
-            <FaSearch className="mx-1" />
+          <div className="h-8/12 w-6/12 flex justify-end items-center text-primary rounded-md">
+             <select name="Category" className="w-2/12 p-2 md:py-2 text-decoration-none text-purlpe-600">
+                <option value="all" className="text-purple-600 text-decoration-none" >all</option>
+                <option value="bag" className="text-purple-600 text-decoration-none" >bags</option>
+                <option value="clothing" className="text-purple-600 text-decoration-none" >clothings</option>
+                <option value="sport" className="text-purple-600 text-decoration-none" >sports</option>
+                <option value="television" className="text-purple-600 text-decoration-none" >televisions</option>
+             </select>
+             <div className="p-2" >
+             <FaSearch className="mx-1" color="#ba2cde"  />
+             </div>
             <input
               type="text"
               name="Search"
               id="Search"
               onChange={(e)=>handleChange(e)}
               value={note}
-              className="w-3/4 bg-transparent p-2 text-gray-900"
+              className="w-10/12 bg-white p-2 text-gray-900"
               placeholder="Search"
             />
             
@@ -106,7 +115,7 @@ const Header = ({ search }) => {
               type="button"
               className="mx-2 border-0 rounded-0 bg-transparent text-primary"
             >
-              <FaCamera />
+              <FaCamera color="#ba2cde" />
             </button>
             <button
               type="button"
@@ -114,11 +123,11 @@ const Header = ({ search }) => {
               onClick={() => setIsListening((prevState) => !prevState)}
             >
                {!isListening && (
-              <FaMicrophoneSlash style={{fontSize:"19px"}}/>
+              <FaMicrophoneSlash color="#ba2cde" style={{fontSize:"19px"}}/>
                    
               )}
               {isListening && (
-              <FaMicrophone style={{fontSize:"19px"}}/>
+              <FaMicrophone color="#ba2cde" style={{fontSize:"19px"}}/>
               )}
             </button>
           </div>
@@ -127,6 +136,7 @@ const Header = ({ search }) => {
         {/*  cart */}
         <div className="h-full px-1 w-20 flex flex-row justify-center items-center">
           <small
+            className="text-purple-900"
             style={{ fontWeight: "500", fontSize: "18px" }}
           >
             {basket?.length}
@@ -136,11 +146,11 @@ const Header = ({ search }) => {
               type="button"
               className="border-0 animation text-md px-1"
             >
-              <FaShoppingCart className="text-black text-xl" />
+              <FaShoppingCart className="text-xl text-purple-900" />
             </button>
           </Link>
         </div>
-        <div className="w-10 border-l border-gray-400 h-full sm:hidden flex justify-center items-center">
+        <div className="w-16 border-l border-gray-400 h-full sm:hidden flex justify-center items-center">
               <ToggleButton />
         </div>
         </div>

@@ -37,9 +37,7 @@ const AllProducts = () => {
 
   return (
     <>
-       {/* <ToggleFilterButton /> */}
-      <div className="CompContainer productContainerCont">
-      <div className="absolute m-2 h-10/12 right-0 py-2 bg-gradient-to-r from-purple-600/50 to-blue-900 backdrop-blur-sm">
+    <div className="absolute w-3/12 h-full mx-3 my-1 right-0 py-2 bg-gradient-to-r from-purple-600/50 to-blue-900 backdrop-blur-sm">
         <div className="w-full flex justify-between items-center">
           <div className="h5 h-full px-1 flex justify-center items-center">
                <FaExchangeAlt className="mx-1" />
@@ -84,9 +82,8 @@ const AllProducts = () => {
           </fieldset>
         </div>
       </div>
-
-
-
+       {/* <ToggleFilterButton /> */}
+      <div className="CompContainer productContainerCont">
       {/*  products container  */}
         <div className="ProductContainer h-screen w-10/12 d-flex flex-wrap justify-content-center align-items-center" style={{overflow:"scroll"}}>
           {products?.map((ar) => {
