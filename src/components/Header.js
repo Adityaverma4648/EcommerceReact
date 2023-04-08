@@ -7,7 +7,7 @@ import {
   FaShoppingCart,
   FaMicrophoneSlash
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ToggleButton from "./ToggleButton";
 
 const SpeechRecognition =
@@ -18,11 +18,10 @@ mic.continuous = true;
 mic.interimResults = true;
 mic.lang = "en-US";
 
-const Header = ({ search }) => {
-
+const Header = ({ handleSearch }) => {
+  const navigate = useNavigate(); 
   const [isListening, setIsListening] = useState(false);
   const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
   const [note, setNote] = useState(null);
 
   const [{ basket, user }, dispatch] = useStateValue();
@@ -31,7 +30,7 @@ const Header = ({ search }) => {
   useEffect(() => {
     if (note !== null) {
       setInput(note);
-      search(note);
+      handleSearch(note);
     }
   }, [note]);
     
@@ -78,6 +77,12 @@ const Header = ({ search }) => {
   };
 
 
+   const handleCategoryChange  = (e) =>{
+      alert("SEARCH FROM HEADER : ",e.target.value);
+      handleSearch(e.target.value);
+      navigate("/products");
+  }
+
   return (
     <div className="Header" >
       <div className="w-20 flex items-center justify-center">
@@ -87,7 +92,7 @@ const Header = ({ search }) => {
         <div className="h-full w-full px-2 d-flex justify-end items-center">
           {/* search form */}
           <div className="h-8/12 w-6/12 flex justify-end items-center text-primary rounded-md">
-             <select name="Category" className="w-2/12 p-2 md:py-2 text-decoration-none text-purlpe-600">
+             <select name="Category" className="w-2/12 p-2 md:py-2 text-decoration-none text-purlpe-600 bg-transparent border-2 border-gray-500/20 rounded-lg" onChange={(e)=>{handleCategoryChange(e)}} >
                 <option value="all" className="text-purple-600 text-decoration-none" >all</option>
                 <option value="bag" className="text-purple-600 text-decoration-none" >bags</option>
                 <option value="clothing" className="text-purple-600 text-decoration-none" >clothings</option>
@@ -103,7 +108,7 @@ const Header = ({ search }) => {
               id="Search"
               onChange={(e)=>handleChange(e)}
               value={note}
-              className="w-10/12 bg-white p-2 text-gray-900"
+              className="w-10/12 bg-transparent border-2 border-gray-500/20 rounded-lg p-2 text-gray-900"
               placeholder="Search"
             />
             

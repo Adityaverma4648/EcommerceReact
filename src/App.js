@@ -24,15 +24,17 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
 
-  const handleSearch = () => {
-        console.log("Search")
+  const handleSearch = (value) => {
+         alert("PRINT VALUE : " , value);
+         setSearch(value);
+         alert( "PRINT SEARCH : " ,search);
   };
 
 
   return (
     <>
       <BrowserRouter>
-          <Header search={handleSearch} />
+          <Header handleSearch={handleSearch} />
         <div className="d-flex">
           <Sidebar />
           <Routes>
@@ -40,7 +42,7 @@ const App = () => {
             <Route path="/explore" element={<Explore />}></Route>
              <Route path="/signUp" element={<SignUp />}></Route>
              <Route path="/category?id" element={<SingleCategory />}></Route>
-            <Route path="/products" element={<AllProducts />}></Route>
+            <Route path="/products" element={<AllProducts searchKey={search} />}></Route>
             <Route path="/saved" element={<Saved />}></Route>
             <Route path="/orderNdelivery" element={<OrderNdelivery />}></Route>
             <Route path="/afterSales" element={<AfterSales />}></Route>

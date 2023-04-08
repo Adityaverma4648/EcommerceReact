@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import Welcome from "../components/Welcome";
 import Category from "../components/Category";
-import Slider from "../components/Slider";
 import axios from "axios";
 
 const Home = () => {
 
   const fetchData = async()=>{
-    const { data } = await axios.get("http://localhost:7000/");
+    const { data } = await axios.get("https://mernecommerce-96kv.onrender.com/");
     console.log(JSON.stringify(data));
   }
   useEffect(()=>{
@@ -20,9 +19,6 @@ const Home = () => {
 
        {/* welcomeContainer */}
         <Welcome />
-
-       {/*  sliderCont */}
-        <Slider />
 
        {/*  category Container */}
         <Category />

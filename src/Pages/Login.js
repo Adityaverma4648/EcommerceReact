@@ -5,23 +5,20 @@ import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
 const intialState = {
-      userName : '',
       email : '',
       password : '',
 };
 
-const SignUp = () => {
+const Login = () => {
 
    const navigate = useNavigate()
    const [formValue, setformValue] = useState(intialState);
-   const {userName , email , password} =  formValue;
+   const { email , password} =  formValue;
 
      const showPassword = (e) =>{
-        var passwordInp= document.getElementById("passwordInp");
         // if(passwordInp.style.display === "block"){
-
+          return 0;
         // }
-
      }
 
     const onInputChange = (e) =>{
@@ -30,7 +27,7 @@ const SignUp = () => {
      }
      const onSubmission = async (e) => {
          alert(JSON.stringify(formValue));
-        axios.post("/user/signUp",formValue).then((res)=>{
+        axios.post("/user/Login",formValue).then((res)=>{
             console.log(res);
         }).catch((error)=>{
             console.log(error);
@@ -52,7 +49,7 @@ const SignUp = () => {
         </div>
   
         <div className="md:mb-0 w-9/12 md:w-8/12 lg:w-5/12 xl:w-5/12">
-          <form action="/user/signUp" method="post" onSubmit={onSubmission} className="bg-white rounded-3xl  p-4">
+          <form onSubmit={onSubmission} className="bg-white rounded-3xl  p-4">
           {/*  heading and other auth options */}
             <div
               className="flex flex-row items-center justify-center lg:justify-center">
@@ -111,22 +108,6 @@ const SignUp = () => {
               </p>
             </div>
             <div className="relative mb-2" data-te-input-wrapper-init>
-              <label htmlFor="userName" className="text-gray-500" >
-                UserName
-              </label>
-              <input
-                type="text"
-                className="text-gray-900 placeholder-gray-900 border peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                id="exampleFormControlInput1"
-                value={userName}
-                name="userName"
-                onChange={(e)=>onInputChange(e)}
-                placeholder="Username"
-                required 
-                />
-              
-            </div>
-            <div className="relative mb-2" data-te-input-wrapper-init>
               <label htmlFor="email" className="text-gray-500" >
                 Email
               </label>
@@ -182,7 +163,7 @@ const SignUp = () => {
                 type="submit"
                 className="w-6/12 inline-block rounded bg-primary py-2 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
                 data-te-ripple-init
-                data-te-ripple-color="light" value="SignUp">
+                data-te-ripple-color="light" value="Login">
               </input>
   
               <p className="mb-0 mt-2 pt-1 text-sm font-semibold text-gray-300">
@@ -202,4 +183,4 @@ const SignUp = () => {
 );
 };
 
-export default SignUp;
+export default Login;
