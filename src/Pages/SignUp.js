@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {Link ,useNavigate} from "react-router-dom";
 import axios from "axios";
 
 const intialState = {
@@ -28,31 +28,21 @@ const SignUp = () => {
       let {name , value} = e.target;
       setformValue({...formValue , [name] : value });
      }
-     const onSubmission = async (e) => {
-         alert(JSON.stringify(formValue));
-        axios.post("/user/signUp",formValue).then((res)=>{
-            console.log(res);
-        }).catch((error)=>{
-            console.log(error);
-        })
+    //  const onSubmission = async (e) => {
+    //      alert(JSON.stringify(formValue));
+    //     axios.post("/user/signUp",formValue).then((res)=>{
+    //         console.log(res);
+    //     }).catch((error)=>{
+    //         console.log(error);
+    //     })
          
-     };
+    //  };
 
   return (
     <section className="h-screen w-screen flex justify-center items-center bg-gray-900">
-    <div className="h-full">
-      <div
-        className="g-6 flex h-3/4 md:h-3/4 lg:h-3/4 xl:h-full flex-wrap items-center justify-center lg:justify-between">
-        <div
-          className="shrink-1 grow-0 basis-auto md:mb-0 w-8/12 md:w-8/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
-          <img
-            src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            className="w-full"
-            alt="Sample image" />
-        </div>
-  
-        <div className="md:mb-0 w-9/12 md:w-8/12 lg:w-5/12 xl:w-5/12">
-          <form action="/user/signUp" method="post" onSubmit={onSubmission} className="bg-white rounded-3xl  p-4">
+    <div className="h-full w-full  flex justify-center items-center"> 
+        <div className=" w-9/12 md:w-6/12 lg:w-5/12 xl:w-5/12">
+          <form action="/user/signUp" method="post" className="bg-white rounded-3xl p-4">
           {/*  heading and other auth options */}
             <div
               className="flex flex-row items-center justify-center lg:justify-center">
@@ -187,17 +177,16 @@ const SignUp = () => {
   
               <p className="mb-0 mt-2 pt-1 text-sm font-semibold text-gray-300">
                 Don't have an account?
-                <a
-                  href="#!"
+                <Link to="/login"
                   className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 mx-1"
-                  >Register</a
-                >
+                  >
+                    Login
+                  </Link>
               </p>
             </div>
           </form>
         </div>
       </div>
-    </div>
   </section>
 );
 };

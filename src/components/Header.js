@@ -22,7 +22,7 @@ const Header = ({ handleSearch }) => {
   const navigate = useNavigate(); 
   const [isListening, setIsListening] = useState(false);
   const [input, setInput] = useState("");
-  const [note, setNote] = useState(null);
+  const [note, setNote] = useState("");
 
   const [{ basket, user }, dispatch] = useStateValue();
   
@@ -77,7 +77,8 @@ const Header = ({ handleSearch }) => {
   };
 
 
-   const handleCategoryChange  = (e) =>{
+   const handleCategoryChange  = (e) =>{ 
+    e.preventDefault();
       alert("SEARCH FROM HEADER : ",e.target.value);
       handleSearch(e.target.value);
       navigate("/products");

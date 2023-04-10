@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState , useEffect} from "react";
 import "../src/App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header.js";
@@ -14,9 +14,7 @@ import Settings from "./Pages/Settings";
 import Cart from "./Pages/Cart";
 import SignUp from "./Pages/SignUp";
 import SingleCategory from "./components/SingleCategory";
-import allProducts from "./data/all.js";
-
-
+import Login from "./Pages/Login";
 
 const App = () => {
   
@@ -41,6 +39,7 @@ const App = () => {
             <Route path="/" element={<Home />}></Route>
             <Route path="/explore" element={<Explore />}></Route>
              <Route path="/signUp" element={<SignUp />}></Route>
+             <Route path="/login" element={<Login />} ></Route>
              <Route path="/category?id" element={<SingleCategory />}></Route>
             <Route path="/products" element={<AllProducts searchKey={search} />}></Route>
             <Route path="/saved" element={<Saved />}></Route>

@@ -270,3 +270,8 @@ input:focus{
     align-items: center;
     background-color: rgb(207, 207, 207);
   }
+
+
+  #cartScrollView::-webkit-scrollbar{
+      display: none;
+  }

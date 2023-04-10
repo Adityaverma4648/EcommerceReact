@@ -1,7 +1,9 @@
 export const initialState = {
   basket: [],
   saved: [],
+  order: [],
   user: null,
+  user_token: null
 };
 
 //Selector
@@ -26,6 +28,18 @@ const reducer = (state, action) => {
 
     case "ADD_TO_SAVED":
       if (state.saved.some(checkUnique)) {
+        return {
+          ...state,
+          saved: [...state.saved],
+        };
+      } else {
+        return {
+          ...state,
+          saved: [...state.saved, action.item],
+        };
+      }
+      case "ORDER":
+      if (state.order.some(checkUnique)) {
         return {
           ...state,
           saved: [...state.saved],

@@ -45,10 +45,10 @@ const AllProducts = ({searchKey}) => {
       <div className="CompContainer productContainerCont">
       {/*  products container  */}
         <div className="ProductContainer h-screen w-10/12 d-flex flex-wrap justify-content-center align-items-center" style={{overflow:"scroll"}}>
-          {products?.map((ar) => {
+          {products?.map((ar,index) => {
             return (
               <ProductCard
-                key={ar.key}
+                key={index}
                 id={ar.id}
                 fullName={ar.fullName}
                 url={ar.url}
