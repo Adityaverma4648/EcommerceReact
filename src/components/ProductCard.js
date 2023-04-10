@@ -44,6 +44,13 @@ const ProductCard = (props) => {
     e.preventDefault();
   };
 
+   useEffect(()=>{
+      let array = new Array(props.rating);
+      for (let i = 0; i < array.length; i++) {
+              array[i] = i+1;
+      }
+      console.log(array);
+   },[])
   return (
     <div className="lg:w-1/5 md:w-2/5 w-4/5 h-1/2 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 relative flex flex-col justify-between items-center">
       <div className="w-full h-

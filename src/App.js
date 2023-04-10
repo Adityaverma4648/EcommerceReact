@@ -23,12 +23,8 @@ const App = () => {
   const [result, setResult] = useState([]);
 
   const handleSearch = (value) => {
-         alert("PRINT VALUE : " , value);
-         setSearch(value);
-         alert( "PRINT SEARCH : " ,search);
+    setSearch(value);
   };
-
-
   return (
     <>
       <BrowserRouter>
@@ -41,7 +37,7 @@ const App = () => {
              <Route path="/signUp" element={<SignUp />}></Route>
              <Route path="/login" element={<Login />} ></Route>
              <Route path="/category?id" element={<SingleCategory />}></Route>
-            <Route path="/products" element={<AllProducts searchKey={search} />}></Route>
+            <Route path="/products" element={<AllProducts search={search} />}></Route>
             <Route path="/saved" element={<Saved />}></Route>
             <Route path="/orderNdelivery" element={<OrderNdelivery />}></Route>
             <Route path="/afterSales" element={<AfterSales />}></Route>

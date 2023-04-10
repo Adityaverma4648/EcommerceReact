@@ -23,6 +23,7 @@ const Header = ({ handleSearch }) => {
   const [isListening, setIsListening] = useState(false);
   const [input, setInput] = useState("");
   const [note, setNote] = useState("");
+  const [selected, setSelected] = useState("all");
 
   const [{ basket, user }, dispatch] = useStateValue();
   
@@ -32,7 +33,7 @@ const Header = ({ handleSearch }) => {
       setInput(note);
       handleSearch(note);
     }
-  }, [note]);
+  }, [note,handleSearch,setInput]);
     
   useEffect(() => {
     handleListen();
@@ -76,13 +77,14 @@ const Header = ({ handleSearch }) => {
     setNote(event.target.value);
   };
 
-
-   const handleCategoryChange  = (e) =>{ 
-    e.preventDefault();
-      alert("SEARCH FROM HEADER : ",e.target.value);
-      handleSearch(e.target.value);
-      navigate("/products");
+  const handleCategoryChange = (e) =>{ 
+    setSelected(e.target.value);
+    navigate("/products");
   }
+  useEffect(()=>{
+     handleSearch(selected);
+     alert(selected);
+  },[selected])
 
   return (
     <div className="Header" >

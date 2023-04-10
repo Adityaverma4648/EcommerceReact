@@ -8,10 +8,8 @@ import ProductCard from "../components/ProductCard.js";
 
 import { FaExchangeAlt , FaRegTimesCircle } from "react-icons/fa";
 
-const AllProducts = ({searchKey}) => {
+const AllProducts = (props) => {
   const [products, setProducts] = useState([0]);
-  const [search, setSearch] = useState("");
-
 
   const productFetcher = (myCategories) => {
     if (myCategories) {
@@ -36,8 +34,9 @@ const AllProducts = ({searchKey}) => {
     }
   };
   useEffect(() => {
-     changeCategory(search);
-  },[search])
+     changeCategory(props.search);
+     alert("ProductCard",props.search)
+  },[props.search])
   return (
     <>
 
