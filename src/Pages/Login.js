@@ -28,15 +28,6 @@ const Login = () => {
       let {name , value} = e.target;
       setformValue({...formValue , [name] : value });
      }
-    //  const onSubmission = async (e) => {
-    //      alert(JSON.stringify(formValue));
-    //     axios.post("/user/Login",formValue).then((res)=>{
-    //         console.log(res);
-    //     }).catch((error)=>{
-    //         console.log(error);
-    //     })
-         
-    //  };
 
   return (
     <section className="h-screen w-screen flex justify-center items-center bg-gray-900">

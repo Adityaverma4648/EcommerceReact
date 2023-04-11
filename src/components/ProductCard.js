@@ -4,7 +4,8 @@ import { FaShoppingBasket, FaHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const ProductCard = (props) => {
   const [{user},dispatch] = useStateValue();
-  const [ratings, setRatings] = useState([])
+  const [rating, setRating] = useState([]);
+
 
   const AddToCart = (e) => {
     dispatch({
@@ -44,13 +45,17 @@ const ProductCard = (props) => {
     e.preventDefault();
   };
 
-   useEffect(()=>{
+   const RatingFetcher= () =>{
       let array = new Array(props.rating);
       for (let i = 0; i < array.length; i++) {
               array[i] = i+1;
       }
-      console.log(array);
-   },[])
+      return array;
+   }
+   useEffect(()=>{
+      setRating(RatingFetcher());
+   },[rating])
+
   return (
     <div className="lg:w-1/5 md:w-2/5 w-4/5 h-1/2 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 relative flex flex-col justify-between items-center">
       <div className="w-full h-
@@ -72,21 +77,19 @@ const ProductCard = (props) => {
              </div>
       </div>
 
-      <div className="h-4/12 bottom-0 absolute w-full bg-gray-100 d-flex flex-column text-center">
-         <div className="w-full text-xl text-center font-bold">
+      <div className="h-4/12 py-2 bottom-0 absolute w-full bg-gray-100 d-flex flex-column text-center">
+         <div className="w-full text-md text-center font-bold">
                   {props.fullName}
          </div>
          <div className="px-2 flex flex-row justify-evenly items-center text-center">
-          <div className="w-1/2 flex flex-col justify-end items-center font-semibold" id="renderStar" >
-                {props.rating}
-
-                {/* {ratings.map((d)=>{
-                    return <FaStar />
-                }) } */}
+          <div className="w-1/2 flex justify-center items-center font-semibold" id="renderStar" >
+                 {rating.map((d)=>{
+                    return <FaStar color="rgba(0,0,0,0.4)" />
+                }) } 
           </div>
         </div>
-        <div className="w-full text-center text-xl font-bold" >
-                Available Only At Rs : {(props.price * 84.4).toFixed(0)}
+        <div className="w-full text-center text-md font-semibold" >
+                Price : {(props.price * 84.4).toFixed(0)} Rs
             </div>
         
       </div>
