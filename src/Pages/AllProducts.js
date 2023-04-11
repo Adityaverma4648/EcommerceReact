@@ -13,8 +13,7 @@ const AllProducts = (props) => {
 
   const productFetcher = (myCategories) => {
     if (myCategories) {
-      var myProducts = myCategories;
-      setProducts(myProducts);
+      setProducts(myCategories);
     }
   };
   useEffect(() => {
@@ -35,7 +34,6 @@ const AllProducts = (props) => {
   };
   useEffect(() => {
      changeCategory(props.search);
-     alert("ProductCard",props.search)
   },[props.search])
   return (
     <>

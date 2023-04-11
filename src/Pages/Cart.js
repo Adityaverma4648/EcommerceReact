@@ -14,6 +14,11 @@ const Cart = () => {
            return <CartItem key={ar.id}  id = {ar.id} fullName= {ar.fullName} description= {ar.description} image= {ar.image} price= {ar.price} producedBy= {ar.producedBy} year= {ar.year} rating= {ar.rating} color= {ar.color} quantity={ar.quantity} />
          }):<EmptyCard theme="Cart" />}
          </div>
+         <div className='w-screen h-1/4 flex justify-center items-center' >
+              <div className="w-8/12 flex justify-center items-center">
+                   
+              </div>
+         </div>
     </div>
   )
 }

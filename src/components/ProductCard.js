@@ -57,7 +57,7 @@ const ProductCard = (props) => {
    },[rating])
 
   return (
-    <div className="lg:w-1/5 md:w-2/5 w-4/5 h-1/2 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 relative flex flex-col justify-between items-center">
+    <div className="lg:w-1/5 md:w-2/5 w-4/5 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 relative flex flex-col justify-between items-center" style={{minHeight : "50vh"}}>
       <div className="w-full h-
       8/12 flex justify-center items-center overflow-hidden">
              {/*  button absolute */}

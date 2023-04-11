@@ -83,7 +83,6 @@ const Header = ({ handleSearch }) => {
   }
   useEffect(()=>{
      handleSearch(selected);
-     alert(selected);
   },[selected])
 
   return (
