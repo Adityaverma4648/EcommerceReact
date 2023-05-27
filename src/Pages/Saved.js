@@ -8,7 +8,7 @@ const Saved = () => {
   const [{ saved, user }, dispatch] = useStateValue();
 
   return (
-    <div className='CompContainer Saved bg-danger justify-content-center'>
+    <div className='w-screen h-screen flex flex-wrap justify-center items-center'>
     {saved.map((ar)=>{
       return <SavedItem  
                 key = {ar.id}

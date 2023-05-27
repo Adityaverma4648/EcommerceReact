@@ -61,7 +61,7 @@ const ProductCard = (props) => {
       <div className="w-full h-
       8/12 flex justify-center items-center overflow-hidden">
              {/*  button absolute */}
-             <div className="w-11/12 py-4 flex absolute top-0 justify-between items-center z-50">
+             <div className="w-11/12 py-4 flex absolute top-0 justify-between items-center z-40">
                 <button type="button" className="w-10 h-10 flex justify-start p-2 items-center border-2 border-black rounded-full" onClick={Saved}>
                    <FaHeart color="red" className="text-xl" />
                 </button>
@@ -84,12 +84,12 @@ const ProductCard = (props) => {
          <div className="px-2 flex flex-row justify-evenly items-center text-center">
           <div className="w-1/2 flex justify-center items-center font-semibold" id="renderStar" >
                  {rating.map((d)=>{
-                    return <FaStar color="rgba(0,0,0,0.4)" />
+                    return <FaStar color="#FFD700" />
                 }) } 
           </div>
         </div>
         <div className="w-full text-center text-md font-semibold" >
-                Price : {(props.price * 84.4).toFixed(0)} Rs
+                Only at {(props.price * 84.4).toFixed(0)} Rs/-
             </div>
         
       </div>

@@ -29,7 +29,7 @@ const App = () => {
     <>
       <BrowserRouter>
           <Header handleSearch={handleSearch} />
-        <div className="d-flex">
+        <div className="flex h-screen w-screen">
           <Sidebar />
           <Routes>
             <Route path="/" element={<Home />}></Route>

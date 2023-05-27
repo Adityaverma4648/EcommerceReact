@@ -86,7 +86,7 @@ const Header = ({ handleSearch }) => {
   },[selected])
 
   return (
-    <div className="Header" >
+    <div className="Header shadow-lg bg-white flex w-screen justify-center items-center" >
       <div className="w-20 flex items-center justify-center">
           <Link to="/" className="text-black text-decoration-none font-semibold" >LOGO</Link>
       </div>
