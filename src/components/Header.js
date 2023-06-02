@@ -86,15 +86,15 @@ const Header = ({ handleSearch }) => {
   },[selected])
 
   return (
-    <div className="Header shadow-lg bg-white flex w-screen justify-center items-center" >
+    <div className="Header shadow-sm bg-white flex w-screen justify-center items-center" >
       <div className="w-20 flex items-center justify-center">
-          <Link to="/" className="text-black text-decoration-none font-semibold" >LOGO</Link>
+          <Link to="/" className="text-black text-decoration-none text-lg font-semibold" >LOGO</Link>
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <div className="h-full w-full px-2 d-flex justify-end items-center">
           {/* search form */}
           <div className="h-8/12 w-6/12 flex justify-end items-center text-primary rounded-md">
-             <select name="Category" className="w-2/12 p-2 md:py-2 text-decoration-none text-purlpe-600 bg-transparent border-2 border-gray-500/20 rounded-lg" onChange={(e)=>{handleCategoryChange(e)}} >
+             <select name="Category" className="lg:w-2/12 w-4/12 p-2 md:py-2 text-decoration-none text-purlpe-600 bg-transparent border-2 border-gray-500/20 rounded-lg" onChange={(e)=>{handleCategoryChange(e)}} >
                 <option value="all" className="text-purple-600 text-decoration-none" >all</option>
                 <option value="bag" className="text-purple-600 text-decoration-none" >bags</option>
                 <option value="clothing" className="text-purple-600 text-decoration-none" >clothings</option>
@@ -102,7 +102,7 @@ const Header = ({ handleSearch }) => {
                 <option value="television" className="text-purple-600 text-decoration-none" >televisions</option>
              </select>
              <div className="p-2" >
-             <FaSearch className="mx-1" color="#ba2cde"  />
+             <FaSearch className="mx-1 text-blue-600"    />
              </div>
             <input
               type="text"
@@ -122,7 +122,7 @@ const Header = ({ handleSearch }) => {
               type="button"
               className="mx-2 border-0 rounded-0 bg-transparent text-primary"
             >
-              <FaCamera color="#ba2cde" />
+              <FaCamera className="text-blue-600" />
             </button>
             <button
               type="button"
@@ -130,11 +130,11 @@ const Header = ({ handleSearch }) => {
               onClick={() => setIsListening((prevState) => !prevState)}
             >
                {!isListening && (
-              <FaMicrophoneSlash color="#ba2cde" style={{fontSize:"19px"}}/>
+              <FaMicrophoneSlash  className="text-blue-600" style={{fontSize:"19px"}}/>
                    
               )}
               {isListening && (
-              <FaMicrophone color="#ba2cde" style={{fontSize:"19px"}}/>
+              <FaMicrophone className="text-blue-600" style={{fontSize:"19px"}}/>
               )}
             </button>
           </div>
@@ -153,7 +153,7 @@ const Header = ({ handleSearch }) => {
               type="button"
               className="border-0 animation text-md px-1"
             >
-              <FaShoppingCart className="text-xl text-purple-900" />
+              <FaShoppingCart className="text-xl text-blue-600" />
             </button>
           </Link>
         </div>

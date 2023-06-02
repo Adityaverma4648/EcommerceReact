@@ -23,7 +23,7 @@ const Welcome = () => {
              </div>
         </div>
         <div className='w-1/2 hidden md:flex md:justify-start md:items-center  md:relative'>
-              <img src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-3688628-3231459.png?f=webp" alt="home" />
+              <img src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-3688628-3231459.png?f=webp" className='select-none' alt="home" />
         </div>
     </div>
   )

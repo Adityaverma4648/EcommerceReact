@@ -26,7 +26,7 @@ const Sidebar = () => {
 }   
 
   return (
-    <div className="z-50 bg-white w-44 h-screen hidden md:flex md:flex-col justify-between left-0 position-absolute shadow-sm" id="Sidebar">
+    <div className="z-50 bg-white w-44 h-screen hidden md:flex md:flex-col justify-between left-0 position-absolute shadow-lg" id="Sidebar">
       
      
 

@@ -40,7 +40,7 @@ const CartItem = (props) => {
       id={props.id}
     >
         <div className="h-full w-1/3 flex justify-center items-center overflow-hidden">
-          <img src={props.image} alt={props.fullName} className="w-10/12 h-auto" />
+          <img src={props.image} alt={props.fullName} className="w-10/12 h-auto select-auto" />
         </div>
         <div className="h-full w-2/3 p-2 flex flex-col justify-start items-center">
           <div className="w-10/12 flex justify-between items-center mb-1" >

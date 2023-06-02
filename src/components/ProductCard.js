@@ -77,7 +77,7 @@ const ProductCard = (props) => {
              </div>
       </div>
 
-      <div className="h-4/12 py-2 bottom-0 absolute w-full bg-gray-100 d-flex flex-column text-center">
+      <div className="h-4/12 p-2 bottom-0 absolute w-full bg-gray-100 d-flex flex-column text-center">
          <div className="w-full text-md text-center font-bold">
                   {props.fullName}
          </div>
@@ -89,7 +89,7 @@ const ProductCard = (props) => {
           </div>
         </div>
         <div className="w-full text-center text-md font-semibold" >
-                Only at {(props.price * 84.4).toFixed(0)} Rs/-
+                Only at <strong>{(props.price * 84.4).toFixed(0)}</strong> Rs/-
             </div>
         
       </div>
