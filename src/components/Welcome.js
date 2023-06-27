@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link} from "react-router-dom";
 
 const Welcome = () => {
+  
+  const animation = () =>{
+      var heading = document.getElementsByClassName(".textAnime");
+      
+         var text = "Welcome to Shopzy!";
+
+        //   loop throuh string
+        //  for (let i = 0; i < text.length; i++) {
+        //     var content = <span>text[i]</span>;
+        //     console.log(content);
+
+            //  dom rendering
+            heading.innerHTML += text; 
+             //  }
+     
+  }
+   useEffect(()=>{
+      animation();
+   },[])
+
   return (
-    <div className='w-screen bg-white flex justify-center items-center' style={{minHeight : "40vh"}}>
-        <div className="w-1/2 h-full flex justify-end items-center z-20">
+    <div className='w-screen h-1/2 flex justify-center items-center'>
+        <div className="w-1/2 h-full flex justify-center items-center z-20">
              <div className='h-full flex flex-col justify-center items-center' >
-             <h3 className='' >
-                Welcome to Shopzy !
-              </h3>
+               <h3 className='text-6xl font-bold textAnime'  >
+                  
+               </h3>
               <span className='text-center text-slate-600' >
                 Lorem ipsum dolor sit amet consectetur.
               </span>
@@ -22,8 +42,14 @@ const Welcome = () => {
               </div>
              </div>
         </div>
-        <div className='w-1/2 hidden md:flex md:justify-start md:items-center  md:relative'>
-              <img src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-3688628-3231459.png?f=webp" className='select-none' alt="home" />
+        <div className='w-1/2 h-full hidden md:flex md:justify-center md:items-center md:relative'>
+              {/* <img src="https://cdni.iconscout.com/illustration/premium/thumb/welcome-3688628-3231459.png?f=webp" className='select-none h-10/12 w-auto' alt="home" /> */}
+
+               <div className='w-full h-full bg-red-400 felx justify-center items-center' id='welcomeAnimation'  >
+                      <div>
+
+                      </div>
+               </div>
         </div>
     </div>
   )

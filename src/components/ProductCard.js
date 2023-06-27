@@ -72,8 +72,8 @@ const ProductCard = (props) => {
                
              </div>
              {/* image block */}
-             <div className="w-full h-full relative flex justify-center items-center" >
-                <img className="w-full" src={props.url} alt={props.fullName} />
+             <div className="w-full h-full relative flex justify-center items-center overflow-hidden" >
+                <img className="w-full hover:scale-125" src={props.url} alt={props.fullName} />
              </div>
       </div>
 

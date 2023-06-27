@@ -15,7 +15,7 @@ const ToggleButton = () => {
     } 
 
   return (
-    <button className=' m-2 w-6 h-6 flex justify-center items-center text-purple-600' onClick={(e)=>toggleSidebar(e)} >
+    <button className=' m-2 w-6 h-6 flex justify-center items-center text-blue-600' onClick={(e)=>toggleSidebar(e)} >
         <FaBars className='w-full h-full' />
     </button>
   )

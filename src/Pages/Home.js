@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Welcome from "../components/Welcome";
-import Category from "../components/Category";
 import axios from "axios";
-import Slider from "../components/Slider";
+import Category from "../components/Category";
+
 
 const Home = () => {
 
@@ -15,15 +15,15 @@ const Home = () => {
 
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center overflow-scroll ">
+    <div className="w-full h-screen bg-gradient-to-t from-red-400 to-blue-400 flex flex-col justify-start items-center">
 
        {/* welcomeContainer */}
         <Welcome />
 
-        {/*  Slider */}
-        <Slider />
-       {/*  category Container */}
+        {/*  category */}
         <Category />
+
+
     </div>
   );
 };

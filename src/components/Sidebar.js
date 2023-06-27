@@ -26,19 +26,13 @@ const Sidebar = () => {
 }   
 
   return (
-    <div className="z-50 bg-white w-44 h-screen hidden md:flex md:flex-col justify-between left-0 position-absolute shadow-lg" id="Sidebar">
+    <div className="z-50 bg-white xl:w-44 lg:w-1/6 md:w-3/12 w-1/2 h-screen hidden md:flex md:flex-col justify-between left-0 position-absolute shadow-lg" id="Sidebar">
       
      
 
-      <div className="h-1/2 flex flex-col justify-evenly items-center">
-
-         <div className="w-full h-14 bg-blue-300 relative flex justify-center items-center" >
-          <button type="button" className="w-10/12 h-9/12 py-1 border-2 border-indigo-500 text-indigo-900 rounded-xl cursor-pointer" onClick={toggleSidebar} >
-              Close Menu 
-          </button>
-         </div>
-
+      <div className="h-1/2 flex flex-col justify-evenly items-center ">
         {/*  Home  */}
+  
         <li
           className="sidebarNavIconsListElem w-10/12 flex justify-center items-center"
           data-bs-toggle="tooltip"
@@ -114,6 +108,7 @@ const Sidebar = () => {
             </strong>
           </Link>
         </li>
+  
       </div>
 
 

@@ -114,16 +114,7 @@ input:focus{
 
 /*  header ends------------------------------------------------------------- */
 
-/* compContainer */
-.CompContainer{
-   width: 100vw;
-   height: 96vh;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   overflow-y: scroll;
-   background-color: rgb(139, 139, 139);  
-}
+
 
 .CompContainer::-webkit-scrollbar{
     display: none;

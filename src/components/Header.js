@@ -86,14 +86,16 @@ const Header = ({ handleSearch }) => {
   },[selected])
 
   return (
-    <div className="Header shadow-sm bg-white flex w-screen justify-center items-center" >
+    <div className="h-16 shadow-sm bg-white flex w-screen justify-center items-center z-50" >
       <div className="w-20 flex items-center justify-center">
-          <Link to="/" className="text-black text-decoration-none text-lg font-semibold" >LOGO</Link>
+          <Link to="/" className="text-indigo-500 text-decoration-none text-lg font-bold" >
+            Shopzy
+          </Link>
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <div className="h-full w-full px-2 d-flex justify-end items-center">
           {/* search form */}
-          <div className="h-8/12 w-6/12 flex justify-end items-center text-primary rounded-md">
+          <div className="h-8/12 w-6/12 hidden md:flex justify-end items-center text-primary rounded-md">
              <select name="Category" className="lg:w-2/12 w-4/12 p-2 md:py-2 text-decoration-none text-purlpe-600 bg-transparent border-2 border-gray-500/20 rounded-lg" onChange={(e)=>{handleCategoryChange(e)}} >
                 <option value="all" className="text-purple-600 text-decoration-none" >all</option>
                 <option value="bag" className="text-purple-600 text-decoration-none" >bags</option>
@@ -117,7 +119,7 @@ const Header = ({ handleSearch }) => {
           </div>
 
           {/* Search Icons  */}
-          <div className=" h-full flex justify-center items-center">
+          <div className=" h-full hidden md:flex justify-center items-center">
             <button
               type="button"
               className="mx-2 border-0 rounded-0 bg-transparent text-primary"
@@ -141,9 +143,9 @@ const Header = ({ handleSearch }) => {
 
 
         {/*  cart */}
-        <div className="h-full px-1 w-20 flex flex-row justify-center items-center">
+        <div className="h-10/12 p-1 w-20 rounded-lg flex flex-row justify-center items-center ">
           <small
-            className="text-purple-900"
+            className="text-red-600"
             style={{ fontWeight: "500", fontSize: "18px" }}
           >
             {basket?.length}
@@ -151,13 +153,13 @@ const Header = ({ handleSearch }) => {
           <Link to="/cart" className="text-decoration-none flex justify-center items-center" >
             <button
               type="button"
-              className="border-0 animation text-md px-1"
+              className="border-0 animation text-md px-1 "
             >
-              <FaShoppingCart className="text-xl text-blue-600" />
+              <FaShoppingCart className="text-xl text-red-600" />
             </button>
           </Link>
         </div>
-        <div className="w-16 border-l border-gray-400 h-full sm:hidden flex justify-center items-center">
+        <div className="w-16 h-full flex justify-center items-center text-blue-900">
               <ToggleButton />
         </div>
         </div>
