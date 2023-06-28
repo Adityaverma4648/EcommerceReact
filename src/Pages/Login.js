@@ -5,16 +5,15 @@ import {Link ,useNavigate} from "react-router-dom";
 import axios from "axios";
 
 const intialState = {
-      userName : '',
       email : '',
       password : '',
 };
 
 const Login = () => {
 
-   const navigate = useNavigate()
+   const navigate = useNavigate();
    const [formValue, setformValue] = useState(intialState);
-   const {userName , email , password} =  formValue;
+   const { email , password} =  formValue;
 
      const togglePasswordVisibility = (e) =>{
         var passwordInp= document.getElementById("passwordInp");
@@ -98,7 +97,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
-                className="text-gray-900 placeholder-gray-900 border peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                className="text-gray-900 placeholder-gray-900 border peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput2"
                 value={email}
                 name="email"
@@ -115,7 +114,7 @@ const Login = () => {
               </label>
               <input
                 type="password"
-                className="text-gray-900 placeholder-gray-900 border peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                className="text-gray-900 placeholder-gray-900 border peer block min-h-[auto] w-full rounded bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="passwordInp"
                 autoComplete="on"
                 name="password"

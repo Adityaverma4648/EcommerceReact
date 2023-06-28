@@ -96,7 +96,7 @@ const Header = ({ handleSearch }) => {
         <div className="h-full w-full px-2 d-flex justify-end items-center">
           {/* search form */}
           <div className="h-8/12 w-6/12 hidden md:flex justify-end items-center text-primary rounded-md">
-             <select name="Category" className="lg:w-2/12 w-4/12 p-2 md:py-2 text-decoration-none text-purlpe-600 bg-transparent border-2 border-gray-500/20 rounded-lg" onChange={(e)=>{handleCategoryChange(e)}} >
+             <select name="Category" className="w-20 h-10 bg-red-300 text-decoration-none text-purlpe-600 bg-transparent rounded-lg text-end" onChange={(e)=>{handleCategoryChange(e)}} >
                 <option value="all" className="text-purple-600 text-decoration-none" >all</option>
                 <option value="bag" className="text-purple-600 text-decoration-none" >bags</option>
                 <option value="clothing" className="text-purple-600 text-decoration-none" >clothings</option>
