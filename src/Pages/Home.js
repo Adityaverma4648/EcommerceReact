@@ -15,7 +15,7 @@ const Home = () => {
 
 
   return (
-    <div className="w-full h-screen bg-gradient-to-t from-red-400 to-blue-400 flex flex-col justify-start items-center">
+    <div className="w-full h-auto bg-white flex flex-col justify-start items-center overflow-y-visible">
 
        {/* welcomeContainer */}
         <Welcome />

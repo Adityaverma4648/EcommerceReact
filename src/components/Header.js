@@ -5,10 +5,10 @@ import {
   FaMicrophone,
   FaSearch,
   FaShoppingCart,
-  FaMicrophoneSlash
+  FaMicrophoneSlash,
+  FaUser,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import ToggleButton from "./ToggleButton";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -86,41 +86,60 @@ const Header = ({ handleSearch }) => {
   },[selected])
 
   return (
-    <div className="h-16 shadow-sm bg-white flex w-screen justify-center items-center z-50" >
-      <div className="w-20 flex items-center justify-center">
-          <Link to="/" className="text-indigo-500 text-decoration-none text-lg font-bold" >
-            Shopzy
-          </Link>
-      </div>
-      <div className="w-full h-full flex justify-center items-center">
-        <div className="h-full w-full px-2 d-flex justify-end items-center">
-          {/* search form */}
-          <div className="h-8/12 w-6/12 hidden md:flex justify-end items-center text-primary rounded-md">
-             <select name="Category" className="w-20 h-10 bg-red-300 text-decoration-none text-purlpe-600 bg-transparent rounded-lg text-end" onChange={(e)=>{handleCategoryChange(e)}} >
-                <option value="all" className="text-purple-600 text-decoration-none" >all</option>
-                <option value="bag" className="text-purple-600 text-decoration-none" >bags</option>
-                <option value="clothing" className="text-purple-600 text-decoration-none" >clothings</option>
-                <option value="sport" className="text-purple-600 text-decoration-none" >sports</option>
-                <option value="television" className="text-purple-600 text-decoration-none" >televisions</option>
-             </select>
-             <div className="p-2" >
-             <FaSearch className="mx-1 text-blue-600"    />
-             </div>
-            <input
-              type="text"
-              name="Search"
-              id="Search"
-              onChange={(e)=>handleChange(e)}
-              value={note}
-              className="w-10/12 bg-transparent border-2 border-gray-500/20 rounded-lg p-2 text-gray-900"
-              placeholder="Search"
-            />
-            
+    <div className=" bg-white h-16 md:px-6 px-3 shadow-sm w-screen flex justify-between items-center text-black" >
+       <div className="w-1/2 h-full flex items-center justify-start">
+          <div className="md:mx-4 mx-2">
+            <Link to="/" className="text-decoration-none text-2xl font-bold" >
+                Shopzy
+            </Link>
           </div>
+      
+          {/* select */}
+           <div className="h-full flex justify-end items-center text-primary rounded-md mx-2 appearance-none outline-none">
+              <select name="Category" className="h-1/2 text-decoration-none text-purlpe-600 bg-transparent font-semibold rounded-lg text-center border-none" onChange={(e)=>{handleCategoryChange(e)}} >
+                <option value="categories">Categories</option>
+                <option value="all" className=" text-decoration-none" >all</option>
+                <option value="bag" className=" text-decoration-none" >bags</option>
+                <option value="clothing" className="text-decoration-none" >clothings</option>
+                <option value="sport" className=" text-decoration-none" >sports</option>
+                <option value="television" className=" text-decoration-none" >televisions</option>
+               </select>
+             </div>
 
-          {/* Search Icons  */}
-          <div className=" h-full hidden md:flex justify-center items-center">
-            <button
+             <div className="h-full w-1/2 lg:flex justify-start items-center list-none mx-2 hidden" >
+                  
+                      <Link to="/deals" className="no-underline mx-3" >
+                         <li className="font-semibold">
+                              Deals
+                         </li>
+                      </Link>
+
+                       <Link to="/products" className="no-underline mx-3" >
+                         <li className="font-semibold">
+                              Products
+                         </li>
+                      </Link>
+
+                      <Link to="/saved" className="no-underline mx-3" >
+                         <li className="font-semibold">
+                              Saved
+                         </li>
+                      </Link>
+
+                      <Link to="/delivery" className="no-underline mx-3" >
+                         <li className="font-semibold">
+                              Delivery
+                         </li>
+                      </Link>
+            
+             </div>
+       </div>   
+           
+       <div className="h-5/6 w-1/2 flex justify-end items-center ">
+
+    {/* searchInputs  */}
+           <div className="w-1/3 h-full md:flex justify-evenly items-center mx-2 md:mx-4 hidden" >
+           <button
               type="button"
               className="mx-2 border-0 rounded-0 bg-transparent text-primary"
             >
@@ -139,32 +158,53 @@ const Header = ({ handleSearch }) => {
               <FaMicrophone className="text-blue-600" style={{fontSize:"19px"}}/>
               )}
             </button>
-          </div>
+             <div className="bg-gray-100 rounded-full h-4/6 flex justify-end items-center">
+               <input
+              type="text"
+              name="Search"
+              id="Search"
+              onChange={(e)=>handleChange(e)}
+              value={note}
+              className="w-10/12 bg-transparent px-2"
+              placeholder="Search"
+            />
+            <FaSearch className="mx-1 text-blue-600"/>
+             </div>
+           </div>
+
+    {/* user signUp account */}
+           <div className="flex items-center justify-center font-semibold mx-2 md:mx-4 text-blue-600" >
+               <button type="button" className="flex justify-center items-center bg-transparent" >
+                  <FaUser className="text-blue-600" />
+                   Account
+               </button>
+           </div>
 
 
-        {/*  cart */}
-        <div className="h-10/12 p-1 w-20 rounded-lg flex flex-row justify-center items-center ">
-          <small
-            className="text-red-600"
+         
+    {/*  cart */}
+           <div className="flex justify-center items-center mx-2 md:mx-4">
+           {/* <small
+            className=""
             style={{ fontWeight: "500", fontSize: "18px" }}
           >
             {basket?.length}
-          </small>
-          <Link to="/cart" className="text-decoration-none flex justify-center items-center" >
+          </small> */}
+            <Link to="/cart" className="text-decoration-none flex justify-center items-center" >
             <button
               type="button"
               className="border-0 animation text-md px-1 "
             >
-              <FaShoppingCart className="text-xl text-red-600" />
+              <FaShoppingCart className="text-xl" />
             </button>
+             <span className="text-md font-semibold" >
+               Cart
+             </span>
           </Link>
-        </div>
-        <div className="w-16 h-full flex justify-center items-center text-blue-900">
-              <ToggleButton />
-        </div>
-        </div>
-      </div>
-    </div>
+            </div>
+           </div>
+       </div> 
+
   );
 };
 

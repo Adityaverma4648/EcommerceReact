@@ -7,7 +7,7 @@ import {OrbitControls , Preload , useGILF} from "@react-three/fiber/";
 
 const Category = () => {
   return (
-    <div>Category</div>
+    <div className='w-full md:h-1/2 h-4/6 flex justify-center items-center'>Category</div>
   )
 }
 

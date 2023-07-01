@@ -57,13 +57,13 @@ const ProductCard = (props) => {
    },[rating])
 
   return (
-    <div className="lg:w-1/5 md:w-2/5 w-4/5 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 relative flex flex-col justify-between items-center" style={{minHeight : "50vh"}}>
+    <div className="lg:w-1/5 md:w-2/5 w-4/5 h-1/2 bg-white py-4 shadow-lg shadow-indigo-500/50 text-center m-1 relative flex flex-col justify-between items-center">
       <div className="w-full h-
-      8/12 flex justify-center items-center overflow-hidden">
+      8/12 flex justify-center items-center ">
              {/*  button absolute */}
              <div className="w-11/12 py-4 flex absolute top-0 justify-between items-center z-40">
                 <button type="button" className="w-10 h-10 flex justify-start p-2 items-center border-2 border-black rounded-full" onClick={Saved}>
-                   <FaHeart color="red" className="text-xl" />
+                   <FaHeart color="red" className="text-xl animate-pulse" />
                 </button>
 
                 <button type="button" className="w-10 h-10 flex justify-end p-2 items-center border-2 border-black rounded-full" onClick={AddToCart}>
@@ -72,8 +72,8 @@ const ProductCard = (props) => {
                
              </div>
              {/* image block */}
-             <div className="w-full h-full relative flex justify-center items-center overflow-hidden" >
-                <img className="w-full hover:scale-125" src={props.url} alt={props.fullName} />
+             <div className="w-full h-full relative flex justify-center items-center " >
+                <img className="h-full w-auto" src={props.url} alt={props.fullName} />
              </div>
       </div>
 

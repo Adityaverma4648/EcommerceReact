@@ -2,7 +2,6 @@
 import React from "react";
 import { useState } from "react";
 import {Link ,useNavigate} from "react-router-dom";
-import axios from "axios";
 
 const intialState = {
       email : '',
@@ -33,7 +32,7 @@ const Login = () => {
     <section className="h-screen w-screen flex justify-center items-center bg-gray-900">
     <div className="h-full w-full flex justify-center items-center">
         <div className=" w-9/12 md:w-6/12 lg:w-5/12 xl:w-5/12">
-          <form action="/user/login" method="post" className="bg-white rounded-3xl p-4">
+          <form  method="post" action="/user/login" className="bg-white rounded-3xl p-4">
           {/*  heading and other auth options */}
             <div
               className="flex flex-row items-center justify-center lg:justify-center">
@@ -131,7 +130,7 @@ const Login = () => {
                 <input
                   type="checkbox"
                   id="exampleCheck2"
-                  onChange={(e)=>{togglePasswordVisibility()}} />
+                  onChange={(e)=>{togglePasswordVisibility(e)}} />
                 <label
                   className="inline-block pl-[0.15rem] hover:cursor-pointer"
                   htmlFor="showPassword" >
