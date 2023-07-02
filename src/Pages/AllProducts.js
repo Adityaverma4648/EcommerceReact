@@ -6,14 +6,14 @@ import ProductCard from "../components/ProductCard.js";
 import { FaExchangeAlt , FaRegTimesCircle } from "react-icons/fa";
 
 const AllProducts = ({props}) => {
-  const [products, setProducts] = useState([0]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
        axios.post('/api/allProducts').then((res) =>
        {           
         setProducts(res.data);
       });
-  }, []);
+  }, [products]);
 
 
 

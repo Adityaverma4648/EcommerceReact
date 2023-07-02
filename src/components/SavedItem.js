@@ -43,8 +43,8 @@ const SavedItem = (props) => {
        </div>
        <div className="px-2 flex flex-row justify-evenly items-center text-center">
         <div className="w-1/2 flex justify-center items-center font-semibold" id="renderStar" >
-               {rating.map((d)=>{
-                  return <FaStar color="rgba(0,0,0,0.4)" />
+               {rating.map((d , index)=>{
+                  return <FaStar key={index} color="rgba(0,0,0,0.4)" />
               }) } 
         </div>
       </div>

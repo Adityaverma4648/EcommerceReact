@@ -38,7 +38,7 @@ const SignUp = () => {
      }
 
   return (
-    <section className="h-screen w-screen flex justify-center items-center bg-gray-900">
+    <section className="h-screen w-screen flex justify-center items-center bg-orange-300">
     <div className="h-full w-full  flex justify-center items-center"> 
         <div className=" w-9/12 md:w-6/12 lg:w-5/12 xl:w-5/12">
           <form action="/user/signUp" method="POST" className="bg-white rounded-3xl p-4">

@@ -72,7 +72,7 @@ const ProductCard = (props) => {
                
              </div>
              {/* image block */}
-             <div className="w-full h-full relative flex justify-center items-center " >
+             <div className="w-full h-full relative flex justify-center items-center" >
                 <img className="h-full w-auto" src={props.url} alt={props.fullName} />
              </div>
       </div>
@@ -83,8 +83,8 @@ const ProductCard = (props) => {
          </div>
          <div className="px-2 flex flex-row justify-evenly items-center text-center">
           <div className="w-1/2 flex justify-center items-center font-semibold" id="renderStar" >
-                 {rating.map((d)=>{
-                    return <FaStar color="#FFD700" />
+                 {rating.map((d , index)=>{
+                    return <FaStar key={index} color="#FFD700" />
                 }) } 
           </div>
         </div>

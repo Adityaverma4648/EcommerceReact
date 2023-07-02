@@ -23,7 +23,7 @@ input:focus{
 }
 
 /*  sidebar Styles ------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.Sidebar{
+/* .Sidebar{
     z-index: 9999999;
     background-color: rgb(223, 223, 223);
     height: 94vh;
@@ -52,7 +52,7 @@ input:focus{
     padding: 4px 0px ;
 }
 /*  hover */
-.sidebarNavIconsListElem:hover{
+/* .sidebarNavIconsListElem:hover{
     transition: all 0.3s ease-in-out;
     background-color: rgba(171, 146, 255,0.3);
     color: #fff;
@@ -103,13 +103,13 @@ input:focus{
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
     }
-}
+}  */
 
 /*  header ends------------------------------------------------------------- */
 
 
 
-.CompContainer::-webkit-scrollbar{
+#Home::-webkit-scrollbar{
     display: none;
 }
 
