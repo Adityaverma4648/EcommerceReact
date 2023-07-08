@@ -1,11 +1,10 @@
 import React,{useState} from 'react';
-import {useBasketTotal} from '../reducer'; 
-import {useStateValue} from "../redux/StateProvider";
 import {Link} from "react-router-dom";
 import SavedItem from '../components/SavedItem';
 
 const Saved = () => {
-  const [{ saved, user }, dispatch] = useStateValue();
+
+  const [saved, setSaved] = useState([])
 
   return (
     <div className='w-screen h-screen flex flex-wrap justify-center items-center'>

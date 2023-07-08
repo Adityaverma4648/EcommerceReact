@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useStateValue } from "../redux/StateProvider";
+// import { useStateValue } from "../redux/StateProvider";
 import {
   FaCamera,
   FaMicrophone,
@@ -9,6 +9,10 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useCookies ,removeCookie } from "react-cookie";
+
+
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -18,14 +22,16 @@ mic.continuous = true;
 mic.interimResults = true;
 mic.lang = "en-US";
 
-const Header = ({ handleSearch }) => {
+const Header = ({ handleSearch, isAdmin }) => {
   const navigate = useNavigate(); 
   const [isListening, setIsListening] = useState(false);
   const [input, setInput] = useState("");
   const [note, setNote] = useState("");
   const [selected, setSelected] = useState("all");
-
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [userData, setUserData] = useCookies("userData"); 
+  const [userName, setUserName] = useState("Account")
+  
+  // const [{ basket, user }, dispatch] = useStateValue();
   
 
   useEffect(() => {
@@ -37,8 +43,15 @@ const Header = ({ handleSearch }) => {
     
   useEffect(() => {
     handleListen();
-  }, [isListening]);
+  }, [isListening ])
 
+  useEffect(()=>{
+    if(userData !== ""){
+      setUserName(userData.userData[0].userName);
+    }else{
+      setUserName("Accounts")
+    }
+  },[userData])
   
   const handleListen = () => {
     if (isListening) {
@@ -81,15 +94,34 @@ const Header = ({ handleSearch }) => {
     setSelected(e.target.value);
     navigate("/products");
   }
+
+
+  //  dropdown lists
+  const dropDownToggler = () =>{
+
+      var dropdown = document.getElementById('dropdown');
+          dropdown.classList.toggle("hidden")
+
+  }
+
+  const logOut = () =>{
+    removeCookie('userData');
+     axios.get('http://localhost:7000/user/logOut').then((res)=>{
+        console.log(res);
+     })
+  }
+
   useEffect(()=>{
      handleSearch(selected);
   },[selected])
 
   return (
-    <div className=" bg-white h-16 md:px-6 px-3 shadow-sm w-screen flex justify-between items-center text-black" >
+
+    <>
+    <div className=" bg-white h-16 md:px-6 px-3 shadow-sm w-screen flex justify-between items-center" >
        <div className="w-1/2 h-full flex items-center justify-start">
           <div className="md:mx-4 mx-2">
-            <Link to="/" className="text-decoration-none text-2xl font-bold" >
+            <Link to="/" className="text-decoration-none text-2xl font-bold text-blue-500" >
                 Shopzy
             </Link>
           </div>
@@ -174,10 +206,14 @@ const Header = ({ handleSearch }) => {
 
     {/* user signUp account */}
            <div className="flex items-center justify-center font-semibold mx-2 md:mx-4 text-blue-600" >
-               <button type="button" className="flex justify-center items-center bg-transparent" >
-                  <FaUser className="text-blue-600" />
+               {userData === "" ? <button type="button" className="flex justify-center items-center bg-transparent" onClick={dropDownToggler} >
+                  <FaUser className="text-blue-600 mx-1" />
                    Account
-               </button>
+               </button> :<button className="flex justify-center items-center bg-transparent" onClick={dropDownToggler} >       
+                  <FaUser className="text-blue-600 mx-1" /> 
+                  {userName} 
+                  </button>    
+              }
            </div>
 
 
@@ -195,15 +231,41 @@ const Header = ({ handleSearch }) => {
               type="button"
               className="border-0 animation text-md px-1 "
             >
-              <FaShoppingCart className="text-xl" />
+              <FaShoppingCart className="text-xl text-blue-500" />
             </button>
-             <span className="text-md font-semibold" >
+             <span className="text-md font-semibold text-blue-500" >
                Cart
              </span>
           </Link>
             </div>
            </div>
-       </div> 
+    </div> 
+
+    {/* account dropdowns  */}
+    <div className="bg-white w-60 h-40 absolute right-0 hidden z-50 m-2 list-none p-2 shadow-lg" id="dropdown" >
+          
+          {userData === "" ? <div className="w-full h-full flex flex-col justify-center items-center"><Link to="/signUp" className="text-decoration-none w-full h-1/3 flex justify-center items-center border-bottom border-top border-gray-900" >
+             <li className="w-full h-full flex justify-center items-center">
+                  SignUp
+             </li>
+         </Link>
+
+         <Link to="/login" className="text-decoration-none w-full h-1/3 flex justify-center items-center border-bottom border-gray-900"  >
+            <li className="w-full h-full flex justify-center items-center">
+                  Login
+            </li>
+         </Link>
+         </div> : <div className="w-full h-full flex flex-col justify-center items-center">
+            <button type="button" className="text-decoration-none w-full h-1/3 flex justify-center items-center border-bottom border-top border-gray-900" onClick={logOut} >
+             <li className="w-full h-full flex justify-center items-center">
+                  logOut
+             </li>
+         </button>
+          </div> 
+         }
+  
+    </div>
+    </>
 
   );
 };

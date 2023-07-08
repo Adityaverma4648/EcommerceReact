@@ -1,12 +1,12 @@
-import React from 'react';
-import {useBasketTotal} from '../reducer'; 
-import {useStateValue} from "../redux/StateProvider";
+import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import CartItem from '../components/CartItem';
 import EmptyCard from '../components/EmptyCard';
 
 const Cart = () => {
-  const [{ basket, user }, dispatch] = useStateValue();
+
+  const [basket, setBasket] = useState([]);
+
   return (
     <div className='w-screen h-screen py-4 bg-gray-400 flex flex-col items-center justify-center'>
          <div className='w-screen flex flex-col items-center justify-start overflow-y-scroll' id='cartScrollView' >

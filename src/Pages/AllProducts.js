@@ -3,25 +3,43 @@ import axios from "axios";
 
 import ProductCard from "../components/ProductCard.js";
 
-import { FaExchangeAlt , FaRegTimesCircle } from "react-icons/fa";
+import { FaFilter } from "react-icons/fa";
 
 const AllProducts = ({props}) => {
   const [products, setProducts] = useState([]);
+  const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-       axios.post('/api/allProducts').then((res) =>
+       axios.post('http://localhost:7000/api/allProducts').then((res) =>
        {           
         setProducts(res.data);
       });
-  }, [products]);
-
-
-
+      axios.post('http://localhost:7000/api/allBrands').then((res) =>
+    {           
+     setBrands(res.data);
+   });
+  }, []);
   return (
     <>
 
        {/* <ToggleFilterButton /> */}
-      <div className="w-screen h-screen overflow-auto flex justify-center items-center">
+      <div className="w-screen h-screen overflow-auto flex flex-col justify-center items-center py-4">
+
+         <div className="h-20 w-11/12 md:w-11/12 lg:w-10/12 flex justify-center items-center bg-orange-300 shadow-md" >
+            
+            <div>
+              <select name="brand">
+
+              </select>
+            </div>
+            
+            
+            <div className="flex justify-center items-center text-white">
+               <FaFilter className="mx-1" />
+               Filters
+            </div>
+         </div>
+
       {/*  products container  */}
         <div className="ProductContainer h-screen w-10/12 d-flex flex-wrap justify-content-center align-items-center" style={{overflow:"scroll"}}>
           {products?.map((ar,index) => {

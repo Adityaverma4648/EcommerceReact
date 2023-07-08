@@ -21,32 +21,54 @@ import Cart from "./Pages/Cart";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
 
+
+//  cookies
+
+import {useCookies} from "react-cookie";
+
+
 const App = () => {
-  
-  const [user,setUser] = useState();  
+
+  // cookies
+
+  const [user, setUser] = useCookies("userData")   // cookie
+  const [userData, setUserData] = useState("");    
   const [search, setSearch] = useState("");
-  const [result, setResult] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(true);
+
 
   const handleSearch = (value) => {
     setSearch(value);
   };
+
+
+  //  useEffect(()=>{
+  //     if(!user){
+  //       setUserData("");
+  //       isAdmin(false);
+  //     }else{
+  //       setUserData(user);
+  //       // (userData.userData[0].email === "bhaiyaji3124@gmail.com")?setIsAdmin(true):setIsAdmin(false)
+  //      }
+  //     }
+  //  ,[user,userData, isAdmin])
   return (
     <>
       <BrowserRouter>
-          <Header handleSearch={handleSearch} />
+          <Header handleSearch={handleSearch} isAdmin={isAdmin} />
         <div className="flex h-screen w-screen">
           {/* <Sidebar /> */}
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/deals" element={<Deals />}></Route>
-             <Route path="/signUp" element={<SignUp />}></Route>
-             <Route path="/login" element={<Login />} ></Route>
-            <Route path="/products" element={<AllProducts search={search} />}></Route>
-            <Route path="/saved" element={<Saved />}></Route>
-            <Route path="/orderNdelivery" element={<OrderNdelivery />}></Route>
-            <Route path="/delivery" element={<Delivery />}></Route>
-            <Route path="/feedback" element={<Feedback />}></Route>
-            <Route path="/settings" element={<Settings />}></Route>
+            <Route path="/" element={<Home userData={userData} isAdmin={isAdmin} />}></Route>
+            <Route path="/deals" element={<Deals userData={userData} isAdmin={isAdmin} />}></Route>
+             <Route path="/signUp" element={<SignUp userData={userData} isAdmin={isAdmin} />}></Route>
+             <Route path="/login" element={<Login userData={userData} isAdmin={isAdmin} />} ></Route>
+            <Route path="/products" element={<AllProducts userData={userData} isAdmin={isAdmin} search={search} />}></Route>
+            <Route path="/saved" element={<Saved userData={userData} isAdmin={isAdmin} />}></Route>
+            <Route path="/orderNdelivery" element={<OrderNdelivery userData={userData} isAdmin={isAdmin} />}></Route>
+            <Route path="/delivery" element={<Delivery userData={userData} isAdmin={isAdmin} />}></Route>
+            <Route path="/feedback" element={<Feedback userData={userData} isAdmin={isAdmin} />}></Route>
+            <Route path="/settings" element={<Settings userData={userData} isAdmin={isAdmin} />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
           </Routes>
         </div>

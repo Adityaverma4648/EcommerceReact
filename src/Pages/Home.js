@@ -5,7 +5,7 @@ import Category from "../components/Category";
 import Slider from "../components/Slider";
 
 
-const Home = () => {
+const Home = ({isAdmin , token , userData}) => {
 
   // const fetchData = async()=>{
   //   const { data } = await axios.get("https://mernecommerce-96kv.onrender.com/");
@@ -21,10 +21,15 @@ const Home = () => {
         <Welcome />
 
         {/*  category........*/}
-        <Category />
+        <Category isAdmin={isAdmin} />
 
          {/*  slider.........*/}
         <Slider />
+
+        <footer className="h-1/2 flex justify-center items-center" >
+          Footer
+        </footer>
+        
 
     </main>
   );

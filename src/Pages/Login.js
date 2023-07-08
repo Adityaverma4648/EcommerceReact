@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import {Link ,useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const intialState = {
       email : '',
@@ -28,11 +29,12 @@ const Login = () => {
       setformValue({...formValue , [name] : value });
      }
 
+
   return (
     <section className="h-screen w-screen flex justify-center items-center bg-orange-300">
     <div className="h-full w-full flex justify-center items-center">
         <div className=" w-9/12 md:w-6/12 lg:w-5/12 xl:w-5/12">
-          <form  method="post" action="http://localhost:7000/user/login" className="bg-white rounded-3xl p-4">
+          <form action="http://localhost:7000/user/login" method="post" className="bg-white rounded-3xl p-4" >
           {/*  heading and other auth options */}
             <div
               className="flex flex-row items-center justify-center lg:justify-center">

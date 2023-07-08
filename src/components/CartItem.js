@@ -1,20 +1,12 @@
 import React,{useState , useEffect} from "react";
 import { FaPlus ,FaMinus, FaTrash } from "react-icons/fa";
-import { useStateValue } from "../redux/StateProvider";
 
 const CartItem = (props) => {
   
-  const [{user},dispatch] = useStateValue();
   const [quan, setQuantity] = useState(props.quantity);
 
   useEffect(() => {
-    dispatch({
-      type: "UPDATE_QUANTITY",
-      item: {
-        id: props.id,
-        quantity: quan,
-      },
-    });
+    
   }, [quan]);
 
   const increment = () =>{
@@ -26,12 +18,7 @@ const CartItem = (props) => {
     }
   }
   const remove = (e) =>{
-    dispatch({
-      type: "REMOVE_FROM_BASKET",
-      item: {
-        id: props.id,
-      },
-    });
+  
     e.preventDefault();
   }
   return (
